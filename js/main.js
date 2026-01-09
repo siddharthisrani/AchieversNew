@@ -681,13 +681,18 @@ Phone: ${phone}
   const email = e.target.querySelector("input").value;
 
   try {
-    await fetch("https://dndc.onrender.com/api/subscribe", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email })
-    });
+    const res = await fetch("https://dndc.onrender.com/api/subscribe", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ email })
+});
 
-    showToast("📩 Subscription successful!", "success");
+if (!res.ok) {
+  throw new Error("Subscribe failed");
+}
+
+showToast("📩 Check your email! Welcome to DNDC 🎉", "success");
+
     e.target.reset();
 
   } catch {
