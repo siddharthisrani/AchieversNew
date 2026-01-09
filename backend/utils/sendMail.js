@@ -3,26 +3,26 @@ const nodemailer = require("nodemailer");
 const sendMail = async ({ to, subject, html }) => {
   try {
     const transporter = nodemailer.createTransport({
-      service: "smtp.gmail.com",
-      port: 587,              
-      secure: false, 
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: false,
       auth: {
-        user: process.env.EMAIL,
-        pass: process.env.EMAIL_PASS
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
       }
-     
     });
 
     await transporter.sendMail({
-      from: `"DNDC" <${process.env.EMAIL}>`,
+      from: `"DNDC" <${process.env.EMAIL_FROM}>`,
       to,
       subject,
       html
     });
 
     console.log("✅ Email sent to:", to);
+
   } catch (error) {
-    console.error("❌ sendMail error:", error.message);
+    console.error("❌ sendMail error:", error);
     throw error;
   }
 };
