@@ -169,7 +169,7 @@ document.getElementById("lead-form").addEventListener("submit", async (e) => {
   const phone = document.getElementById("lead-phone").value;
 
   try {
-    const res = await fetch("https://localhost:5000/api/lead", {
+    const res = await fetch("https://dndc.onrender.com/api/lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, phone })
@@ -681,7 +681,7 @@ Phone: ${phone}
   const email = e.target.querySelector("input").value;
 
   try {
-    await fetch("https://localhost:5000L/api/subscribe", {
+    await fetch("https://dndc.onrender.com/api/subscribe", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email })
@@ -735,7 +735,7 @@ Phone: ${phone}
   chatbotInput.value = "";
 
   try {
-    const res = await fetch("https://localhost:5000/api/chat", {
+    const res = await fetch("https://dndc.onrender.com/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message })
