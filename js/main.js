@@ -826,15 +826,24 @@ function addBotMessage(msg) {
     // Dark Mode Toggle
     // ===========================================
     function setupDarkMode() {
-        const toggle = document.getElementById('dark-mode-toggle');
-        
-        if (toggle) {
-            toggle.addEventListener('click', () => {
-                // This is already a dark theme, so we could add a light mode
-                // For now, just show a message
-                showToast('Dark mode is already enabled! Light mode coming soon.', 'success');
-            });
-        }
+   
+const toggle = document.getElementById("dark-mode-toggle");
+const icon = toggle.querySelector("i");
+
+const savedTheme = localStorage.getItem("theme") || "dark";
+document.body.setAttribute("data-theme", savedTheme);
+icon.className = savedTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
+
+toggle.addEventListener("click", () => {
+  const isDark = document.body.getAttribute("data-theme") === "dark";
+  const nextTheme = isDark ? "light" : "dark";
+
+  document.body.setAttribute("data-theme", nextTheme);
+  localStorage.setItem("theme", nextTheme);
+  icon.className = nextTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
+});
+
+
     }
 
     // ===========================================
@@ -938,6 +947,7 @@ function addBotMessage(msg) {
     function init() {
         console.log('🚀 Initializing DNDC Website...');
 
+        
         // Wait for Three.js to load
         if (window.THREE) {
             initGlobe();
@@ -949,7 +959,7 @@ function addBotMessage(msg) {
                 }
             }, 100);
         }
-
+ 
         // Setup all features
         setupScrollAnimations();
         setupStatsCounter();
@@ -977,8 +987,22 @@ function addBotMessage(msg) {
             }
         }, 250));
 
+          /* ================= Lead Modal Auto Open ================= */
+
+const leadModal = document.getElementById("lead-modal");
+
+if (leadModal) {
+  setTimeout(() => {
+    leadModal.classList.add("active");
+    console.log("🎯 Lead modal auto-opened on page load");
+  }, 3000);
+}
+
+
         console.log('✅ DNDC Website initialized successfully!');
     }
+
+    
 
     // Start when DOM is ready
     if (document.readyState === 'loading') {

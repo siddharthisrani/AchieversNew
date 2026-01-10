@@ -307,6 +307,12 @@ a {
     box-shadow: var(--shadow-glow);
 }
 
+/* Light mode toggle look */
+body[data-theme="light"] .dark-mode-toggle {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.15);
+}
 /* ========================================
    Back to Top Button
    ======================================== */
@@ -553,6 +559,8 @@ a {
    ======================================== */
 .floating-globe {
     position: fixed;
+    right: 5%;
+    top: 10%;
     width: 600px;
     height: 600px;
     z-index: var(--z-dropdown);
@@ -2506,4 +2514,189 @@ a {
   border: none;
   color: white;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  /* Remove center line */
+  .timeline-line {
+    display: none;
+  }
+
+  /* Stack phases */
+  .journey-phase {
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+  }
+
+  /* Remove circles */
+  .phase-marker {
+    display: none;
+  }
+
+  /* Full width cards */
+  .phase-card {
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .course-card {
+    min-height: auto;
+  }
+
+  .course-content {
+    padding: 1.25rem;
+  }
+
+  .course-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .course-name {
+    font-size: 1.25rem;
+  }
+
+  .course-stats {
+    opacity: 1;
+    transform: none;
+  }
+
+  .course-btn {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .newsletter-content {
+    padding: 2rem 1.25rem;
+  }
+
+  .newsletter-title {
+    font-size: 1.6rem;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+
+  .newsletter-input {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+}
+
+
+/* ===============================
+   LIGHT MODE (SAFE OVERRIDES ONLY)
+   =============================== */
+
+body[data-theme="light"] {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+body[data-theme="light"] .navbar,
+body[data-theme="light"] .footer,
+body[data-theme="light"] .modal,
+body[data-theme="light"] .chatbot-window {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+}
+
+body[data-theme="light"] .nav-link,
+body[data-theme="light"] p,
+body[data-theme="light"] span,
+body[data-theme="light"] h1,
+body[data-theme="light"] h2,
+body[data-theme="light"] h3,
+body[data-theme="light"] h4 {
+  color: #0f172a;
+}
+
+body[data-theme="light"] .bg-glass,
+body[data-theme="light"] .stat-card,
+body[data-theme="light"] .feature-card,
+body[data-theme="light"] .course-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+/* ===============================
+   Light Mode – Form Inputs FIX
+   =============================== */
+
+body[data-theme="light"] input,
+body[data-theme="light"] textarea,
+body[data-theme="light"] select {
+  background-color: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+}
+
+body[data-theme="light"] input::placeholder,
+body[data-theme="light"] textarea::placeholder {
+  color: #64748b;
+}
+
+/* Focus state */
+body[data-theme="light"] input:focus,
+body[data-theme="light"] textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* ===============================
+   Light Mode – Mobile Navbar FIX
+   =============================== */
+
+body[data-theme="light"] .navbar-menu {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+body[data-theme="light"] .nav-link {
+  color: #0f172a;
+}
+
+body[data-theme="light"] .nav-link:hover,
+body[data-theme="light"] .nav-link.active {
+  color: #3b82f6;
+}
+
+/* Hamburger icon lines */
+body[data-theme="light"] .navbar-toggle span {
+  background-color: #0f172a;
+}
+/* ===============================
+   Light Mode – Newsletter FIX
+   =============================== */
+
+body[data-theme="light"] .newsletter-input {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+}
+
+body[data-theme="light"] .newsletter-btn {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: #ffffff;
 }
