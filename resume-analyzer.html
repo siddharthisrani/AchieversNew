@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Analyzer | DNDC</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/resume.css">
+</head>
+
+<body data-theme="dark">
+
+<header class="resume-header">
+  <a href="index.html" class="back-btn">← Back to Home</a>
+  <h1>📄 Resume Analyzer</h1>
+  <p>Check job readiness & get personalized course guidance</p>
+</header>
+
+<main class="resume-container">
+  <div class="resume-card">
+
+    <!-- ✅ NO FORM TAG - Just plain elements -->
+    <label class="upload-box" for="resume-file">
+      <span>📤 Upload Resume</span>
+    </label>
+    <input type="file" id="resume-file" accept=".pdf,.doc,.docx" hidden />
+
+    <p id="file-name" class="file-name"></p>
+
+    <!-- ✅ type="button" prevents form submission -->
+    <button type="button" id="analyze-resume-btn" class="btn btn-primary btn-glow">
+      Analyze Resume
+    </button>
+
+    <div id="loading" class="hidden">
+      🔍 Analyzing your resume...
+    </div>
+
+  </div>
+</main>
+
+<!-- RESULT MODAL -->
+<div id="resume-result" class="resume-result">
+  <div class="resume-box">
+    <button type="button" class="resume-close" onclick="closeResumeResult()">✕</button>
+
+    <div class="score-circle">
+      <span id="score-value">0</span>/100
+    </div>
+
+    <h3>❌ Missing Sections</h3>
+    <div class="result-cards"></div>
+
+    <h3>🎯 Recommended Courses</h3>
+    <ul id="course-list"></ul>
+
+    <button type="button" class="btn btn-outline" onclick="location.href='index.html#contact'">
+      Book Free Counseling
+    </button>
+  </div>
+</div>
+
+<!-- ✅ ONLY load resume.js, NOT main.js -->
+<script src="./js/resume.js"></script>
+
+<!-- DO NOT include main.js on this page -->
+<!-- <script src="./js/main.js"></script> -->
+</body>
+</html>

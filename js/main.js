@@ -147,10 +147,12 @@ const closeBtn = document.getElementById("lead-close");
 document.querySelectorAll(
   ".btn-primary, .cta-buttons .btn-primary, .cta-feature"
 ).forEach(btn => {
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", (e) => {
+    if (btn.hasAttribute("data-ignore-lead")) return;
     modal.classList.add("active");
   });
 });
+
 
 closeBtn.addEventListener("click", () => {
   modal.classList.remove("active");
@@ -941,6 +943,202 @@ toggle.addEventListener("click", () => {
         }
     }
 
+
+    function setupAIRobot() {
+  const wrapper = document.getElementById("ai-robot-wrapper");
+  const canvas = document.getElementById("ai-robot-canvas");
+
+  if (!wrapper || !canvas || !window.THREE) return;
+
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(
+    35,
+    wrapper.clientWidth / wrapper.clientHeight,
+    0.1,
+    100
+  );
+  camera.position.set(0, 0.9, 1.9);
+ camera.lookAt(0, 0.8, 0);
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    alpha: true,
+    antialias: true
+  });
+
+  renderer.setClearColor(0x000000, 0);
+  renderer.setSize(wrapper.clientWidth, wrapper.clientHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  /* Lights */
+ scene.add(new THREE.AmbientLight(0xffffff, 1.6));
+
+const keyLight = new THREE.DirectionalLight(0xffffff, 1.2);
+keyLight.position.set(2, 3, 4);
+scene.add(keyLight);
+
+const fillLight = new THREE.DirectionalLight(0xffffff, 0.8);
+fillLight.position.set(-2, 1, 3);
+scene.add(fillLight);
+
+// helper: remove suspicious large ground planes
+function removeLargePlanesFrom(scene) {
+  const toRemove = [];
+  scene.traverse(child => {
+    if (child.isMesh) {
+      const box = new THREE.Box3().setFromObject(child);
+      const size = box.getSize(new THREE.Vector3());
+
+      if ((size.x > 6 && size.z > 6 && size.y < 1.2) || size.x > 30) {
+        toRemove.push(child);
+      }
+    }
+  });
+  toRemove.forEach(m => {
+    if (m.parent) m.parent.remove(m);
+  });
+}
+
+// helper: fit camera perfectly to model
+function fitCameraToObject(camera, object, offset = 1.25) {
+  const box = new THREE.Box3().setFromObject(object);
+  const size = box.getSize(new THREE.Vector3());
+  const center = box.getCenter(new THREE.Vector3());
+
+  const maxSize = Math.max(size.x, size.y, size.z);
+  const fov = THREE.MathUtils.degToRad(camera.fov);
+  const distance = (maxSize / 2) / Math.tan(fov / 2) * offset;
+
+  camera.position.set(center.x, center.y, center.z + distance);
+  camera.lookAt(center);
+  camera.updateProjectionMatrix();
+}
+
+  /* Load Robot */
+ const loader = new THREE.GLTFLoader();
+let robot;
+
+loader.load("assets/robot.glb", (gltf) => {
+  const model = gltf.scene || gltf.scenes[0];
+
+  const wrapperGroup = new THREE.Group();
+  wrapperGroup.add(model);
+  scene.add(wrapperGroup);
+
+  // Remove large background / floor meshes
+  removeLargePlanesFrom(wrapperGroup);
+
+  // Normalize position
+  const box = new THREE.Box3().setFromObject(wrapperGroup);
+  wrapperGroup.position.y -= box.min.y; // keep feet on ground
+
+  // Scale nicely to fit widget
+  const size = box.getSize(new THREE.Vector3());
+  const maxSize = Math.max(size.x, size.y, size.z);
+  const scale = 1.1 / maxSize;
+  wrapperGroup.scale.setScalar(scale);
+
+  // Fit camera to robot
+  setTimeout(() => {
+    fitCameraToObject(camera, wrapperGroup, 1.1);
+  }, 50);
+
+  robot = wrapperGroup;
+
+  // cute hello motion
+  setTimeout(() => {
+    if (robot) {
+      robot.rotation.y += Math.PI / 8;
+      setTimeout(() => robot.rotation.y -= Math.PI / 16, 600);
+    }
+  }, 800);
+}, undefined, (err) => {
+  console.error("Robot load failed", err);
+});
+
+let waved = false;
+
+setTimeout(() => {
+  if (robot && !waved) {
+    robot.rotation.y += Math.PI / 8;
+    waved = true;
+  }
+}, 1200);
+
+  const clock = new THREE.Clock();
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  if (robot) {
+    const t = Date.now() * 0.002;
+
+    // Floating
+    robot.position.y =  Math.sin(t) * 0.06;
+
+    // Breathing tilt
+    robot.rotation.x = Math.sin(t * 0.7) * 0.03;
+
+    // Gentle sway
+    robot.rotation.z = Math.sin(t * 0.5) * 0.02;
+  }
+
+  renderer.render(scene, camera);
+}
+
+window.addEventListener("mousemove", (e) => {
+  if (!robot) return;
+
+  const x = (e.clientX / window.innerWidth - 0.5) * 0.6;
+  const y = (e.clientY / window.innerHeight - 0.5) * 0.3;
+
+  robot.rotation.y = x;
+  robot.rotation.x += -y * 0.05;
+});
+
+const robotWrapper = wrapper;
+
+robotWrapper.addEventListener("mouseenter", () => {
+  if (!robot) return;
+  robot.position.y += 0.18;
+});
+
+robotWrapper.addEventListener("mouseleave", () => {
+  if (!robot) return;
+  robot.position.y -= 0.18;
+});
+
+
+
+
+  animate();
+
+  /* Resize safety */
+  window.addEventListener("resize", () => {
+    camera.aspect = wrapper.clientWidth / wrapper.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(wrapper.clientWidth, wrapper.clientHeight);
+  });
+
+  /* Click → AI Tools Panel */
+ wrapper.addEventListener("click", () => {
+  if (!robot) return;
+
+  robot.rotation.y += Math.PI / 6; // cute wave
+  openAIToolsPanel();
+});
+}
+
+function openAIToolsPanel() {
+ const panel = document.getElementById("ai-tools-panel");
+  panel.classList.add("active");
+}
+document.getElementById("ai-panel-close")
+  .addEventListener("click", () => {
+    document.getElementById("ai-tools-panel").classList.remove("active");
+});
+
     // ===========================================
     // Initialize Everything
     // ===========================================
@@ -971,6 +1169,7 @@ toggle.addEventListener("click", () => {
         setupFAQ();
         setupTestimonialsCarousel();
         setupNewsletterForm();
+        setupAIRobot();
         setupChatbot();
         setupDarkMode();
         setupSmoothScroll();
@@ -1010,6 +1209,8 @@ if (leadModal) {
     } else {
         init();
     }
+
+
 
     // ===========================================
     // Cleanup on page unload
