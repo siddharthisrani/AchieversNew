@@ -734,7 +734,7 @@ showToast("📩 Check your email! Welcome to DNDC 🎉", "success");
         }
 
         // Send message
-       async function sendMessage() {
+   async function sendMessage() {
   const message = chatbotInput.value.trim();
   if (!message) return;
 
@@ -749,10 +749,28 @@ showToast("📩 Check your email! Welcome to DNDC 🎉", "success");
     });
 
     const data = await res.json();
+
     addBotMessage(data.reply);
 
+    // 🔥 AUTO OPEN WHATSAPP
+    const encoded = encodeURIComponent(
+      `Hi DNDC 👋 I want information about your courses.\n\nMy message: ${message}`
+    );
+
+    const whatsappURL = `https://wa.me/917000073787?text=${encoded}`;
+
+    setTimeout(() => {
+      window.open(whatsappURL, "_blank");
+    }, 800);
+
   } catch {
-    addBotMessage("Our team will contact you shortly 😊");
+    addBotMessage("Sure 😊 Call us at +91 7000073787. Opening WhatsApp...");
+
+    const encoded = encodeURIComponent(
+      `Hi DNDC 👋 I want information about your courses.\n\nMy message: ${message}`
+    );
+
+    window.open(`https://wa.me/917000073787?text=${encoded}`, "_blank");
   }
 }
 
@@ -795,6 +813,30 @@ function addBotMessage(msg) {
                 sendMessage();
             });
         });
+
+     // ===========================================
+// Auto WhatsApp after 15 seconds
+// ===========================================
+
+let whatsappTriggered = false;
+
+setTimeout(() => {
+  if (!whatsappTriggered) {
+
+    whatsappTriggered = true;
+
+    const encoded = encodeURIComponent(
+      "Hi DNDC 👋 I am interested in your courses. Please guide me."
+    );
+
+    const whatsappURL = `https://wa.me/917000073787?text=${encoded}`;
+
+    window.open(whatsappURL, "_blank");
+  }
+
+}, 15000); // 15 seconds
+
+
     }
 
     // ===========================================
