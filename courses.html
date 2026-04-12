@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Courses - DNDC</title>
+
+<meta name="description" content="Explore MERN, Python, Java, Data Science, AI & ML courses in Bhopal with flexible durations and placement assistance.">
+
+<link rel="canonical" href="https://dndc.in/courses.html">
+
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/web-app-manifest-512x512.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+
+/* ===== Premium Course Page ===== */
+
+.course-page {
+  padding: 120px 20px 60px;
+}
+
+.course-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.course-tab {
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(59,130,246,0.3);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.course-tab.active {
+  background: var(--gradient-primary);
+}
+
+.duration-filter {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.duration-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(59,130,246,0.3);
+  cursor: pointer;
+}
+
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 350px));
+  justify-content: center; /* THIS FIXES STRETCH */
+  gap: 30px;
+}
+
+.course-box {
+  background: var(--bg-glass);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(59,130,246,0.2);
+  transition: 0.4s;
+}
+
+.course-box:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-glow);
+}
+
+.course-box img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; /* prevents stretch */
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.course-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.whatsapp-btn {
+  display: block;
+  margin: 60px auto 0;
+  padding: 15px 30px;
+  background: var(--gradient-primary);
+  border-radius: 30px;
+  text-align: center;
+  width: fit-content;
+}
+
+.course-tab.active {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  box-shadow: 0 0 15px rgba(59,130,246,0.5);
+}
+
+.duration-btn.active {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  box-shadow: 0 0 12px rgba(59,130,246,0.5);
+  border: none;
+}
+
+
+.course-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.course-modal-content {
+  background: #111;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  animation: scaleIn 0.3s ease;
+}
+
+.course-modal-content img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="course-page">
+
+<h1 class="section-title-large gradient-text">Explore All Courses</h1>
+
+<!-- CATEGORY TABS -->
+<div class="course-tabs">
+  <div class="course-tab active" onclick="filterCourse('all')">All</div>
+  <div class="course-tab" onclick="filterCourse('mern')">MERN</div>
+  <div class="course-tab" onclick="filterCourse('python')">Python</div>
+  <div class="course-tab" onclick="filterCourse('java')">Java</div>
+  <div class="course-tab" onclick="filterCourse('data')">Data</div>
+  <div class="course-tab" onclick="filterCourse('ai')">AI / ML</div>
+</div>
+
+<!-- DURATION FILTER -->
+<div class="duration-filter">
+  <div class="duration-btn" onclick="filterDuration('all')">All</div>
+  <div class="duration-btn" onclick="filterDuration('2')">2 Month</div>
+  <div class="duration-btn" onclick="filterDuration('3')">3 Month</div>
+  <div class="duration-btn" onclick="filterDuration('4')">4 Month</div>
+  <div class="duration-btn" onclick="filterDuration('6')">6 Month</div>
+  <div class="duration-btn" onclick="filterDuration('8')">8+ Month</div>
+</div>
+
+<!-- COURSES -->
+<div class="course-container">
+
+  <!-- MERN -->
+<div class="course-box" data-cat="mern" data-duration="2"><div class="course-title">MERN - 2 Month</div><img src="assets/courses/mern-2.png"></div>
+<div class="course-box" data-cat="mern" data-duration="3"><div class="course-title">MERN - 3 Month</div><img src="assets/courses/mern-3.png"></div>
+<div class="course-box" data-cat="mern" data-duration="4"><div class="course-title">MERN - 4 Month</div><img src="assets/courses/mern-4.png"></div>
+<div class="course-box" data-cat="mern" data-duration="6"><div class="course-title">MERN - 6 Month</div><img src="assets/courses/mern-6.png"></div>
+<div class="course-box" data-cat="mern" data-duration="8"><div class="course-title">MERN - 8 Month</div><img src="assets/courses/mern-8.png"></div>
+
+<!-- PYTHON -->
+<div class="course-box" data-cat="python" data-duration="2"><div class="course-title">Python - 2 Month</div><img src="assets/courses/py-2.png"></div>
+<div class="course-box" data-cat="python" data-duration="3"><div class="course-title">Python - 3 Month</div><img src="assets/courses/py-3.png"></div>
+<div class="course-box" data-cat="python" data-duration="4"><div class="course-title">Python - 4 Month</div><img src="assets/courses/py-4.png"></div>
+<div class="course-box" data-cat="python" data-duration="6"><div class="course-title">Python - 6 Month</div><img src="assets/courses/py-6.png"></div>
+<div class="course-box" data-cat="python" data-duration="8"><div class="course-title">Python - 8 Month</div><img src="assets/courses/py-8.png"></div>
+
+<!-- JAVA -->
+<div class="course-box" data-cat="java" data-duration="2"><div class="course-title">Java - 2 Month</div><img src="assets/courses/java-2.png"></div>
+<div class="course-box" data-cat="java" data-duration="3"><div class="course-title">Java - 3 Month</div><img src="assets/courses/java-3.png"></div>
+<div class="course-box" data-cat="java" data-duration="4"><div class="course-title">Java - 4 Month</div><img src="assets/courses/java-4.png"></div>
+<div class="course-box" data-cat="java" data-duration="6"><div class="course-title">Java - 6 Month</div><img src="assets/courses/java-6.png"></div>
+<div class="course-box" data-cat="java" data-duration="8"><div class="course-title">Java - 8 Month</div><img src="assets/courses/java-8.png"></div>
+
+<!-- DATA ANALYTICS -->
+<div class="course-box" data-cat="data" data-duration="2"><div class="course-title">Data Analytics - 2 Month</div><img src="assets/courses/DA-2.png"></div>
+<div class="course-box" data-cat="data" data-duration="4"><div class="course-title">Data Analytics - 4 Month</div><img src="assets/courses/DA-4.png"></div>
+<div class="course-box" data-cat="data" data-duration="6"><div class="course-title">Data Analytics - 6 Month</div><img src="assets/courses/DA-6.png"></div>
+
+<!-- DATA SCIENCE -->
+<div class="course-box" data-cat="data" data-duration="8">
+  <div class="course-title">Data Science - 7-8 Month</div>
+  <img src="assets/courses/DS-8.png">
+</div>
+
+<!-- ML -->
+<div class="course-box" data-cat="ai" data-duration="10">
+  <div class="course-title">Machine Learning - 8-10 Month</div>
+  <img src="assets/courses/ML-10.png">
+</div>
+
+<!-- AI -->
+<div class="course-box" data-cat="ai" data-duration="12">
+  <div class="course-title">Artificial Intelligence - 10-12 Month</div>
+  <img src="assets/courses/AI-10.png">
+</div>
+
+</div>
+
+<!-- CTA -->
+<a href="https://wa.me/91700073787?text=I want course details" class="whatsapp-btn">
+  Talk on WhatsApp
+</a>
+
+</section>
+
+<div id="course-modal" class="course-modal">
+  <div class="course-modal-content">
+    <span class="close-modal">&times;</span>
+
+    <h2 id="modal-title"></h2>
+    <img id="modal-img" src="" />
+
+    <a id="modal-whatsapp" target="_blank" class="whatsapp-btn">
+      Enroll via WhatsApp
+    </a>
+  </div>
+</div>
+
+<script>
+
+let currentCategory = "all";
+let currentDuration = "all";
+
+function filterCourse(cat) {
+  currentCategory = cat;
+  applyFilter();
+}
+
+function filterDuration(duration) {
+  currentDuration = duration;
+  applyFilter();
+}
+
+document.querySelectorAll(".course-tab").forEach(tab => {
+  tab.addEventListener("click", function () {
+    document.querySelectorAll(".course-tab").forEach(t => t.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+
+document.querySelectorAll(".duration-btn").forEach(btn => {
+  btn.addEventListener("click", function () {
+    document.querySelectorAll(".duration-btn").forEach(b => b.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+
+function applyFilter() {
+  let courses = document.querySelectorAll(".course-box");
+
+  courses.forEach(course => {
+    let cat = course.dataset.cat;
+    let dur = parseInt(course.dataset.duration);
+
+    let showCat = (currentCategory === "all" || cat === currentCategory);
+
+    let showDur =
+      currentDuration === "all" ||
+      dur == currentDuration ||
+      (currentDuration === "8" && dur >= 8);
+
+    course.style.display = (showCat && showDur) ? "block" : "none";
+  });
+}
+
+
+const modal = document.getElementById("course-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalImg = document.getElementById("modal-img");
+const modalWhatsapp = document.getElementById("modal-whatsapp");
+
+document.querySelectorAll(".course-box").forEach(card => {
+  card.addEventListener("click", () => {
+    const title = card.querySelector(".course-title").innerText;
+    const img = card.querySelector("img").src;
+
+    modalTitle.innerText = title;
+    modalImg.src = img;
+
+    modalWhatsapp.href =
+      "https://wa.me/91700073787?text=I am interested in " + encodeURIComponent(title);
+
+    modal.style.display = "flex";
+  });
+});
+
+document.querySelector(".close-modal").onclick = () => {
+  modal.style.display = "none";
+};
+
+window.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+</script>
+
+</body>
+</html>
