@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" role="img" aria-label="DNDC">
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="miter" stroke-linecap="square">
+    <path d="M 44 30 L 224 42 L 214 108 L 34 96 Z" />
+  </g>
+  <text x="130" y="89"
+        font-family="Inter, system-ui, -apple-system, sans-serif"
+        font-weight="900"
+        font-size="58"
+        letter-spacing="-2.4"
+        fill="currentColor"
+        text-anchor="middle">DNDC</text>
+</svg>

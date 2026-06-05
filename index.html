@@ -58,7 +58,7 @@ training institute in Mp nagar Zone-1 bhopal
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style2.css">
     
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -91,1108 +91,751 @@ training institute in Mp nagar Zone-1 bhopal
 }
 </script>
 
+
+
 </head>
-<body data-theme="dark">
-
-
-    <!-- Preloader -->
-    <div id="preloader" class="preloader">
-        <div class="preloader-content">
-            <div class="preloader-logo">
-                <svg viewBox="0 0 100 100" class="logo-svg">
-                    <defs>
-                        <linearGradient id="preloaderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" 
-                             fill="none" 
-                             stroke="url(#preloaderGradient)" 
-                             stroke-width="3" 
-                             class="hex-outer"/>
-                    <circle cx="50" cy="50" r="8" fill="url(#preloaderGradient)" class="hex-center"/>
-                </svg>
-            </div>
-            <div class="preloader-text">Loading Excellence...</div>
-            <div class="preloader-bar">
-                <div class="preloader-progress"></div>
-            </div>
-        </div>
+<body>
+  <!-- ============================== -->
+  <!-- LOADER                         -->
+  <!-- ============================== -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <div class="loader__brand">
+        <svg class="loader__logo-svg" id="loaderLogoSvg" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+          <path class="loader__frame" d="M 64 38 L 270 50 L 258 124 L 52 112 Z"
+                fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linejoin="miter" stroke-linecap="square" />
+          <text class="loader__wordmark" x="160" y="103"
+                font-family="Inter, system-ui, sans-serif"
+                font-weight="900" font-size="64" letter-spacing="-2.6"
+                fill="currentColor" text-anchor="middle">DNDC</text>
+          <text class="loader__tagline" x="160" y="170"
+                font-family="Inter, system-ui, sans-serif"
+                font-weight="400" font-size="12" letter-spacing="3.2"
+                fill="currentColor" text-anchor="middle" opacity="0.85">DATA AND DEVELOPMENT CENTER</text>
+        </svg>
+      </div>
+      <div class="loader__bar"><div class="loader__bar-fill" id="loaderBar"></div></div>
+      <div class="loader__counter" id="loaderCount">0</div>
     </div>
+  </div>
 
-    <!-- Scroll Progress Bar -->
-    <div id="scroll-progress" class="scroll-progress"></div>
+  <!-- ============================== -->
+  <!-- CURSOR                         -->
+  <!-- ============================== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
 
-    <!-- Dark Mode Toggle -->
-    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-sun"></i>
-    </button>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Custom Cursor (Desktop Only) -->
-    <div class="custom-cursor"></div>
-    <div class="custom-cursor-dot"></div>
-
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar">
-        <div class="container navbar-container">
-            <div class="navbar-logo">
-                <svg viewBox="0 0 100 100" class="logo-svg">
-                    <defs>
-                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                        </linearGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" 
-                             fill="none" 
-                             stroke="url(#logoGradient)" 
-                             stroke-width="3" 
-                             filter="url(#glow)"/>
-                    <circle cx="50" cy="50" r="8" fill="url(#logoGradient)" filter="url(#glow)"/>
-                </svg>
-                <div class="logo-text">
-                    <div class="logo-name">DNDC</div>
-                    <div class="logo-tagline">DATA & DEVELOPMENT CENTER</div>
-                </div>
-            </div>
-            
-            <div class="navbar-menu" id="navbar-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#courses" class="nav-link">Courses</a>
-                <a href="#testimonials" class="nav-link">Success Stories</a>
-                <a href="#blog" class="nav-link">Resources</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            
-            <button class="navbar-cta">
-                <span>Free Trial</span>
-                <i class="fas fa-arrow-right"></i>
-            </button>
-            
-            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+  <!-- ============================== -->
+  <!-- NAVIGATION                     -->
+  <!-- ============================== -->
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__brand" aria-label="DNDC — home">
+      <img src="assets/DNDC-Logo.jpeg" alt="DNDC" class="nav__brand-logo" />
+      <span class="nav__brand-sub">Data &amp; Development Center</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#courses" data-magnetic>Courses</a>
+      <a href="#about" data-magnetic>About</a>
+      <a href="#why" data-magnetic>Why DNDC</a>
+      <a href="#testimonials" data-magnetic>Stories</a>
     </nav>
+    <a href="resume-analyzer.html" class="nav__cta" data-magnetic>
+      <span>ATS Resume</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.4" />
+      </svg>
+    </a>
+  </header>
 
-    <!-- Animated Grid Background -->
-    <div class="animated-grid"></div>
+  <!-- ============================== -->
+  <!-- HERO                           -->
+  <!-- ============================== -->
+  <section class="hero" id="hero">
+    <div class="hero__content">
+      <div class="hero__tag">
+        <span class="dot-glow"></span>
+        <span>Admissions open — Batch 2026</span>
+      </div>
 
-    <!-- Energy Particles -->
-    <div class="energy-particles"></div>
+      <h1 class="hero__title" id="heroTitle">
+        <span class="line">Build Your</span>
+        <span class="line italic">Future</span>
+        <span class="line">With Technology</span>
+      </h1>
 
-    <!-- Floating Globe Container -->
-    <div id="floating-globe" class="floating-globe">
-        <canvas id="globe-canvas" class="globe-canvas"></canvas>
-        <div class="globe-glow"></div>
+      <p class="hero__sub" id="heroSub">
+        Industry-focused practical learning for future developers,
+        analysts, and creators — taught by mentors who ship for a living.
+      </p>
+
+      <div class="hero__cta">
+        <a href="#courses" class="btn btn--solid" data-magnetic>
+          <span>Explore Courses</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 8H14M14 8L8 2M14 8L8 14" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+        </a>
+        <a href="#"
+   class="btn btn--ghost btn-primary"
+   data-magnetic>
+          <span>Join Demo Class</span>
+        </a>
+      </div>
+
+      <div class="hero__stack">
+        <span class="hero__stack-label">We teach</span>
+        <ul>
+          <li>React</li>
+          <li>Node</li>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>AI / ML</li>
+          <li>Java</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title hero-text stagger-1">
-                    Master The
-                    <span class="hero-title-gradient">Digital Future</span>
-                </h1>
-                <p class="hero-description hero-text stagger-2">
-                    Industry-leading training programs designed to transform beginners into job-ready professionals. Learn from experts, build real projects, and launch your tech career.
-                </p>
-                <div class="hero-buttons hero-text stagger-3">
-                    <button class="btn btn-primary btn-glow">
-                        <span>Start Your Journey</span>
-                        <i class="fas fa-rocket"></i>
-                    </button>
-                    <a href="courses.html" class="btn btn-outline">
-                        <span>Explore Courses</span>
-                        <i class="fas fa-compass"></i>
-                    </a>
-                </div>
-                <div class="hero-stats hero-text stagger-3">
-                    <div class="stat-card stat-card-blue">
-                        <div class="stat-number" data-target="2000">0</div>
-                        <div class="stat-label">Careers Launched</div>
-                    </div>
-                    <div class="stat-card stat-card-cyan">
-                        <div class="stat-number" data-target="98">0</div>
-                        <div class="stat-label">Success Rate</div>
-                    </div>
-                    <div class="stat-card stat-card-purple">
-                        <div class="stat-number" data-target="150">0</div>
-                        <div class="stat-label">Hiring Partners</div>
-                    </div>
-                </div>
-            </div>
+    <!-- Editorial visual on the right -->
+    <figure class="hero__visual" id="heroVisual">
+      <div class="hero__visual-wrap">
+        <img
+          class="hero__visual-img"
+          src="assets/g1.jpeg"
+          alt="DNDC cohort — students and mentors together"
+          loading="eager"
+        />
+        <div class="hero__visual-tint" aria-hidden="true"></div>
+        <div class="hero__visual-grain" aria-hidden="true"></div>
+
+        <div class="hero__visual-corner">
+          <span class="hero__visual-index">01 / Inside DNDC</span>
         </div>
-    </section>
 
-    <!-- Transform Section -->
-    <section id="about" class="transform-section">
-        <div class="section-bg-gradient"></div>
-        <div class="container">
-            <div class="transform-grid">
-                <div class="transform-visual">
-                    <div class="transform-center">
-                        <div class="transform-badge">
-                            <span>AI-Powered Learning</span>
-                        </div>
-                        <h3 class="transform-title">Your Future,<br/>Reimagined</h3>
-                        <p class="transform-text">Experience learning that adapts to you, powered by cutting-edge technology</p>
-                    </div>
-                    <div class="pulse-rings">
-                        <div class="pulse-ring pulse-ring-1"></div>
-                        <div class="pulse-ring pulse-ring-2"></div>
-                        <div class="pulse-ring pulse-ring-3"></div>
-                    </div>
-                </div>
-                
-                <div class="transform-content animate-on-scroll">
-                    <h2 class="section-title">
-                        Transform Your Career With
-                        <span class="gradient-text">Cutting-Edge Technology</span>
-                    </h2>
-                    
-                    <div class="features-list">
-                        <div class="feature-card card-hover">
-                            <div class="feature-icon">🎯</div>
-                            <div class="feature-content">
-                                <h4 class="feature-title">Personalized Learning Paths</h4>
-                                <p class="feature-desc">AI-driven curriculum adapts to your learning speed and style</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card card-hover">
-                            <div class="feature-icon">💼</div>
-                            <div class="feature-content">
-                                <h4 class="feature-title">Live Industry Projects</h4>
-                                <p class="feature-desc">Work on real-world projects with actual client requirements</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card card-hover">
-                            <div class="feature-icon">👨‍🏫</div>
-                            <div class="feature-content">
-                                <h4 class="feature-title">Expert Mentorship</h4>
-                                <p class="feature-desc">Learn from industry veterans with 10+ years experience</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card card-hover">
-                            <div class="feature-icon">🚀</div>
-                            <div class="feature-content">
-                                <h4 class="feature-title"> Placement assistance</h4>
-                                <p class="feature-desc">Job assistance until you land your dream role</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero__visual-meta">
+          <div>
+            <span class="hero__visual-eyebrow">Inauguration</span>
+            <span class="hero__visual-loc">Bhopal campus &middot; March 2026</span>
+          </div>
+          <div class="hero__visual-cta">
+            <span>Step inside</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.4" />
+            </svg>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Courses Section -->
-    <section id="courses" class="courses-section">
-        <div class="section-bg-gradient"></div>
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-badge">Our Programs</div>
-                <h2 class="section-title-large">
-                    <span class="gradient-text">Premium Courses</span>
-                </h2>
-                <p class="section-subtitle">Explore our immersive 3D course experience</p>
-                <div class="tech-indicator">
-                    <div class="tech-label">Powered by Advanced Learning</div>
-                    <div class="tech-badge">
-                        <div class="pulse-dot"></div>
-                        <span>Interactive Globe Technology</span>
-                    </div>
-                </div>
-            </div>
+      <figcaption class="hero__visual-caption">
+        <span class="num" data-target="24">DNDC</span>
+        <span class="lbl">Empowering professionals year<br/>round for nearly a decade</span>
+      </figcaption>
+    </figure>
 
-            <!-- 3D Course Cards Layer 1 -->
-            <div class="course-layer layer-1 animate-on-scroll">
-                <div class="course-grid">
-                    <!-- MERN Stack -->
-                    <div class="course-card card-3d" data-course="mern">
-                        <div class="course-bg-gradient gradient-green"></div>
-                        <div class="course-particles"></div>
-                        <div class="course-content">
-                            <div class="course-icon icon-green">📚</div>
-                            <h3 class="course-name">MERN Stack</h3>
-                            <div class="course-meta">
-                                <span><i class="far fa-clock"></i> 2-8 month</span>
-                                <span>•</span>
-                                <span><i class="fas fa-certificate"></i> Certificate</span>
-                            </div>
-                            <div class="course-stats">
-                                <div class="course-stat">
-                                    <div class="stat-value">95%</div>
-                                    <div class="stat-name">Placement</div>
-                                </div>
-                                <div class="course-stat">
-                                    <div class="stat-value">500+</div>
-                                    <div class="stat-name">Students</div>
-                                </div>
-                            </div>
-                            <a href="courses.html" class="course-btn btn-green">
-                                <span>Explore Course</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="corner-accent"></div>
-                    </div>
+    <div class="hero__meta">
+      <div class="hero__meta-item">
+        <span class="num">7+</span>
+        <span class="lbl">Years of mentoring</span>
+      </div>
+      <div class="hero__meta-item">
+        <span class="num">2,400+</span>
+        <span class="lbl">Learners trained</span>
+      </div>
+      <div class="hero__meta-item">
+        <span class="num">100%</span>
+        <span class="lbl">Placement Assistance</span>
+      </div>
+    </div>
 
-                    <!-- Python Full Stack -->
-                    <div class="course-card card-3d" data-course="python">
-                        <div class="course-bg-gradient gradient-yellow"></div>
-                        <div class="course-particles"></div>
-                        <div class="course-content">
-                            <div class="course-icon icon-yellow">📚</div>
-                            <h3 class="course-name">Python Full Stack</h3>
-                            <div class="course-meta">
-                                <span><i class="far fa-clock"></i> 2-8 month</span>
-                                <span>•</span>
-                                <span><i class="fas fa-certificate"></i> Certificate</span>
-                            </div>
-                            <div class="course-stats">
-                                <div class="course-stat">
-                                    <div class="stat-value">90%</div>
-                                    <div class="stat-name">Placement</div>
-                                </div>
-                                <div class="course-stat">
-                                    <div class="stat-value">300+</div>
-                                    <div class="stat-name">Students</div>
-                                </div>
-                            </div>
-                            <a href="courses.html" class="course-btn btn-yellow">
-                                <span>Explore Course</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="corner-accent"></div>
-                    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
 
-                    <!-- Java Full Stack -->
-                    <div class="course-card card-3d" data-course="java">
-                        <div class="course-bg-gradient gradient-red"></div>
-                        <div class="course-particles"></div>
-                        <div class="course-content">
-                            <div class="course-icon icon-red">📚</div>
-                            <h3 class="course-name">Java Full Stack</h3>
-                            <div class="course-meta">
-                                <span><i class="far fa-clock"></i> 2-8 month</span>
-                                <span>•</span>
-                                <span><i class="fas fa-certificate"></i> Certificate</span>
-                            </div>
-                            <div class="course-stats">
-                                <div class="course-stat">
-                                    <div class="stat-value">85%</div>
-                                    <div class="stat-name">Placement</div>
-                                </div>
-                                <div class="course-stat">
-                                    <div class="stat-value">200+</div>
-                                    <div class="stat-name">Students</div>
-                                </div>
-                            </div>
-                            <a href="courses.html" class="course-btn btn-red">
-                                <span>Explore Course</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="corner-accent"></div>
-                    </div>
+  <!-- ============================== -->
+  <!-- MARQUEE                        -->
+  <!-- ============================== -->
+  <section class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Code</span><i>&#9678;</i>
+      <span>Design</span><i>&#9678;</i>
+      <span>Data</span><i>&#9678;</i>
+      <span>Build</span><i>&#9678;</i>
+      <span>Ship</span><i>&#9678;</i>
+      <span>Repeat</span><i>&#9678;</i>
+      <span>Code</span><i>&#9678;</i>
+      <span>Design</span><i>&#9678;</i>
+      <span>Data</span><i>&#9678;</i>
+      <span>Build</span><i>&#9678;</i>
+      <span>Ship</span><i>&#9678;</i>
+      <span>Repeat</span><i>&#9678;</i>
+    </div>
+  </section>
 
-                    <!-- Data Science -->
-                    <div class="course-card card-3d" data-course="data-science">
-                        <div class="course-bg-gradient gradient-purple"></div>
-                        <div class="course-particles"></div>
-                        <div class="course-content">
-                            <div class="course-icon icon-purple">📚</div>
-                            <h3 class="course-name">Data Science</h3>
-                            <div class="course-meta">
-                                <span><i class="far fa-clock"></i> 7-8 month</span>
-                                <span>•</span>
-                                <span><i class="fas fa-certificate"></i> Certificate</span>
-                            </div>
-                            <div class="course-stats">
-                                <div class="course-stat">
-                                    <div class="stat-value">93%</div>
-                                    <div class="stat-name">Placement</div>
-                                </div>
-                                <div class="course-stat">
-                                    <div class="stat-value">700+</div>
-                                    <div class="stat-name">Students</div>
-                                </div>
-                            </div>
-                            <a href="courses.html" class="course-btn btn-purple">
-                                <span>Explore Course</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="corner-accent"></div>
-                    </div>
-                </div>
-            </div>
+  <!-- ============================== -->
+  <!-- COURSES                        -->
+  <!-- ============================== -->
+  <section class="courses" id="courses">
+    <div class="section__head">
+      <div class="section__index">01 / Programs</div>
+      <h2 class="section__title">
+        <span>Curated</span>
+        <span class="italic">Courses,</span>
+        <span>built for builders.</span>
+      </h2>
+      <p class="section__lede">
+        Eight programs designed around how the industry actually
+        hires. Live projects, mentor reviews, and a portfolio you
+        can be proud of.
+      </p>
+    </div>
 
-            <!-- 3D Course Cards Layer 2 -->
-            <div class="course-layer layer-2 animate-on-scroll">
-                <div class="course-grid">
-                    <!-- AI & ML -->
-                    <div class="course-card card-3d" data-course="ai-ml">
-                        <div class="course-bg-gradient gradient-cyan"></div>
-                        <div class="course-particles"></div>
-                        <div class="course-content">
-                            <div class="course-icon icon-cyan">📚</div>
-                            <h3 class="course-name">Data Analytics</h3>
-                            <div class="course-meta">
-                                <span><i class="far fa-clock"></i> 2-6 month</span>
-                                <span>•</span>
-                                <span><i class="fas fa-certificate"></i> Certificate</span>
-                            </div>
-                            <a href="courses.html" class="course-btn btn-cyan">
-                                <span>Explore Course</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- DevOps -->
-                    <div class="course-card card-3d" data-course="devops">
-                        <div class="course-bg-gradient gradient-indigo"></div>
-                        <div class="course-particles"></div>
-                        <div class="course-content">
-                            <div class="course-icon icon-indigo">📚</div>
-                            <h3 class="course-name">Artificial Intelligence (AI)</h3>
-                            <div class="course-meta">
-                                <span><i class="far fa-clock"></i>10-12 month</span>
-                                <span>•</span>
-                                <span><i class="fas fa-certificate"></i> Certificate</span>
-                            </div>
-                            <a href="courses.html" class="course-btn btn-indigo">
-                                <span>Explore Course</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Cloud Computing -->
-                    <div class="course-card card-3d" data-course="cloud">
-                        <div class="course-bg-gradient gradient-blue"></div>
-                        <div class="course-particles"></div>
-                        <div class="course-content">
-                            <div class="course-icon icon-blue">📚</div>
-                            <h3 class="course-name">Machine Learning (ML)</h3>
-                            <div class="course-meta">
-                                <span><i class="far fa-clock"></i> 8-10 month</span>
-                                <span>•</span>
-                                <span><i class="fas fa-certificate"></i> Certificate</span>
-                            </div>
-                            <a href="courses.html" class="course-btn btn-blue">
-                                <span>Explore Course</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Blockchain -->
-                    <div class="course-card card-3d" data-course="blockchain">
-                        <div class="course-bg-gradient gradient-violet"></div>
-                        <div class="course-particles"></div>
-                        <div class="course-content">
-                            <div class="course-icon icon-violet">📚</div>
-                            <h3 class="course-name">Digital Marketing</h3>
-                            <div class="course-meta">
-                                <span><i class="far fa-clock"></i> 2-8 month</span>
-                                <span>•</span>
-                                <span><i class="fas fa-certificate"></i> Certificate</span>
-                            </div>
-                            <a href="courses.html" class="course-btn btn-violet">
-                                <span>Explore Course</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course Indicator -->
-            <div class="course-indicator animate-on-scroll">
-                <div class="indicator-dots">
-                    <div class="indicator-dot"></div>
-                    <div class="indicator-dot"></div>
-                    <div class="indicator-dot"></div>
-                </div>
-                <span>Data And Development Center</span>
-            </div>
+    <div class="courses__grid">
+      <a href="courses2.html?program=java" class="course-card" data-color="#e26743">
+        <div class="course-card__top">
+          <span class="course-card__num">01</span>
+          <span class="course-card__level">Intermediate</span>
         </div>
-    </section>
-
-    <!-- Learning Journey Section -->
-    <section class="journey-section">
-        <div class="section-bg-gradient"></div>
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2 class="section-title-large">
-                    Your <span class="gradient-text-purple">Learning Journey</span>
-                </h2>
-                <p class="section-subtitle">From zero to hero in 4 strategic phases</p>
-            </div>
-
-            <div class="journey-timeline">
-                <div class="timeline-line"></div>
-                
-                <!-- Phase 1 -->
-                <div class="journey-phase animate-on-scroll">
-                    <div class="phase-content phase-left">
-                        <div class="phase-card card-blue">
-                            <div class="phase-header">
-                                <div class="phase-icon">🎯</div>
-                                <div class="phase-number">01</div>
-                            </div>
-                            <h3 class="phase-title">Foundation Mastery</h3>
-                            <p class="phase-desc">Build rock-solid fundamentals with interactive coding exercises and real-time feedback</p>
-                        </div>
-                    </div>
-                    <div class="phase-marker">
-                        <div class="marker-circle">1</div>
-                    </div>
-                    <div class="phase-spacer"></div>
-                </div>
-
-                <!-- Phase 2 -->
-                <div class="journey-phase animate-on-scroll">
-                    <div class="phase-spacer"></div>
-                    <div class="phase-marker">
-                        <div class="marker-circle">2</div>
-                    </div>
-                    <div class="phase-content phase-right">
-                        <div class="phase-card card-cyan">
-                            <div class="phase-header">
-                                <div class="phase-icon">💻</div>
-                                <div class="phase-number">02</div>
-                            </div>
-                            <h3 class="phase-title">Project Development</h3>
-                            <p class="phase-desc">Create portfolio-worthy projects solving real business problems</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phase 3 -->
-                <div class="journey-phase animate-on-scroll">
-                    <div class="phase-content phase-left">
-                        <div class="phase-card card-purple">
-                            <div class="phase-header">
-                                <div class="phase-icon">🎤</div>
-                                <div class="phase-number">03</div>
-                            </div>
-                            <h3 class="phase-title">Industry Preparation</h3>
-                            <p class="phase-desc">Mock interviews, resume building, and soft skills training with HR professionals</p>
-                        </div>
-                    </div>
-                    <div class="phase-marker">
-                        <div class="marker-circle">3</div>
-                    </div>
-                    <div class="phase-spacer"></div>
-                </div>
-
-                <!-- Phase 4 -->
-                <div class="journey-phase animate-on-scroll">
-                    <div class="phase-spacer"></div>
-                    <div class="phase-marker">
-                        <div class="marker-circle">4</div>
-                    </div>
-                    <div class="phase-content phase-right">
-                        <div class="phase-card card-pink">
-                            <div class="phase-header">
-                                <div class="phase-icon">🚀</div>
-                                <div class="phase-number">04</div>
-                            </div>
-                            <h3 class="phase-title">Career Launch</h3>
-                            <p class="phase-desc">Direct interviews with our 150+ hiring partners and lifetime placement assistance</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <h3>Java Full Stack</h3>
+        <p>Spring Boot, Hibernate, microservices, and a React frontend — taught the way real product teams build.</p>
+        <ul class="course-card__tech">
+          <li>Java</li><li>Spring Boot</li><li>React</li><li>SQL</li><li>Docker</li>
+        </ul>
+        <div class="course-card__kpis">
+          <div><span class="k">Duration</span><span class="v">6 Months</span></div>
+          <div><span class="k">Projects</span><span class="v">5 live</span></div>
+          <div><span class="k">Mode</span><span class="v">Hybrid</span></div>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-badge">Success Stories</div>
-                <h2 class="section-title-large">
-                    What Our <span class="gradient-text">Students Say</span>
-                </h2>
-                <p class="section-subtitle">Real stories from real people who transformed their careers</p>
-            </div>
-
-            <div class="testimonials-carousel">
-                <div class="testimonials-track">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <img src="https://i.pravatar.cc/150?img=1" alt="John Doe" class="testimonial-avatar">
-                            <div class="testimonial-info">
-                                <h4 class="testimonial-name">Neha Gulati</h4>
-                                <p class="testimonial-role">Software Engineer at Google</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "DNDC transformed my career completely. The mentorship was exceptional, and the real-world projects prepared me for the industry challenges. Within 3 months of completion, I landed my dream job at Google!"
-                        </p>
-                        <div class="testimonial-badge">MERN Stack Graduate</div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <img src="https://i.pravatar.cc/150?img=5" alt="Sarah Johnson" class="testimonial-avatar">
-                            <div class="testimonial-info">
-                                <h4 class="testimonial-name">Ritik Chouhan</h4>
-                                <p class="testimonial-role">Data Scientist at Amazon</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "Coming from a non-tech background, I was skeptical. But the personalized learning path and expert guidance made all the difference. The AI & ML course was incredibly comprehensive!"
-                        </p>
-                        <div class="testimonial-badge">Data Science Graduate</div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <img src="https://i.pravatar.cc/150?img=12" alt="Michael Chen" class="testimonial-avatar">
-                            <div class="testimonial-info">
-                                <h4 class="testimonial-name">Suraj Verma</h4>
-                                <p class="testimonial-role">Full Stack Developer at Microsoft</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "The hands-on approach and industry-relevant projects made learning enjoyable. The placement assistance team was instrumental in helping me secure multiple job offers."
-                        </p>
-                        <div class="testimonial-badge">Python Full Stack Graduate</div>
-                    </div>
-
-                    <!-- Testimonial 4 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <img src="https://i.pravatar.cc/150?img=32" alt="Emily Rodriguez" class="testimonial-avatar">
-                            <div class="testimonial-info">
-                                <h4 class="testimonial-name">Rishi singh</h4>
-                                <p class="testimonial-role">DevOps Engineer at Netflix</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "Best investment I made in my career. The curriculum is up-to-date with industry standards, and the instructors are world-class. Highly recommended!"
-                        </p>
-                        <div class="testimonial-badge">DevOps Graduate</div>
-                    </div>
-
-                    <!-- Duplicate for infinite scroll -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <img src="https://i.pravatar.cc/150?img=1" alt="John Doe" class="testimonial-avatar">
-                            <div class="testimonial-info">
-                                <h4 class="testimonial-name">Ankit Sharma</h4>
-                                <p class="testimonial-role">Software Engineer at Google</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "DNDC transformed my career completely. The mentorship was exceptional, and the real-world projects prepared me for the industry challenges. Within 3 months of completion, I landed my dream job at Google!"
-                        </p>
-                        <div class="testimonial-badge">MERN Stack Graduate</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-controls">
-                <button class="carousel-btn carousel-prev" aria-label="Previous testimonial">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="carousel-dots">
-                    <span class="carousel-dot active"></span>
-                    <span class="carousel-dot"></span>
-                    <span class="carousel-dot"></span>
-                    <span class="carousel-dot"></span>
-                </div>
-                <button class="carousel-btn carousel-next" aria-label="Next testimonial">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
+        <div class="course-card__foot">
+          <span>View program</span>
+          <span class="arrow">&#8599;</span>
         </div>
-    </section>
+      </a>
 
-    <!-- Companies Section -->
-    <section class="companies-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h3 class="companies-title">Trusted by <span class="gradient-text">Industry Leaders</span></h3>
-                <p class="section-subtitle">Our students work at the world's best companies</p>
-            </div>
-
-            <div class="companies-slider">
-                <div class="companies-track">
-                    <div class="company-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='50%25' y='50%25' fill='%2360a5fa' font-size='24' font-weight='bold' text-anchor='middle' dominant-baseline='middle'%3EGoogle%3C/text%3E%3C/svg%3E" alt="Google">
-                    </div>
-                    <div class="company-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='50%25' y='50%25' fill='%2360a5fa' font-size='24' font-weight='bold' text-anchor='middle' dominant-baseline='middle'%3EMicrosoft%3C/text%3E%3C/svg%3E" alt="Microsoft">
-                    </div>
-                    <div class="company-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='50%25' y='50%25' fill='%2360a5fa' font-size='24' font-weight='bold' text-anchor='middle' dominant-baseline='middle'%3EAmazon%3C/text%3E%3C/svg%3E" alt="Amazon">
-                    </div>
-                    <div class="company-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='50%25' y='50%25' fill='%2360a5fa' font-size='24' font-weight='bold' text-anchor='middle' dominant-baseline='middle'%3ENetflix%3C/text%3E%3C/svg%3E" alt="Netflix">
-                    </div>
-                    <div class="company-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='50%25' y='50%25' fill='%2360a5fa' font-size='24' font-weight='bold' text-anchor='middle' dominant-baseline='middle'%3EApple%3C/text%3E%3C/svg%3E" alt="Apple">
-                    </div>
-                    <div class="company-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='50%25' y='50%25' fill='%2360a5fa' font-size='24' font-weight='bold' text-anchor='middle' dominant-baseline='middle'%3EMeta%3C/text%3E%3C/svg%3E" alt="Meta">
-                    </div>
-                    <div class="company-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='50%25' y='50%25' fill='%2360a5fa' font-size='24' font-weight='bold' text-anchor='middle' dominant-baseline='middle'%3ETesla%3C/text%3E%3C/svg%3E" alt="Tesla">
-                    </div>
-                    <div class="company-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='50%25' y='50%25' fill='%2360a5fa' font-size='24' font-weight='bold' text-anchor='middle' dominant-baseline='middle'%3EIBM%3C/text%3E%3C/svg%3E" alt="IBM">
-                    </div>
-                    <!-- Duplicate for infinite scroll -->
-                    <div class="company-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='50%25' y='50%25' fill='%2360a5fa' font-size='24' font-weight='bold' text-anchor='middle' dominant-baseline='middle'%3EGoogle%3C/text%3E%3C/svg%3E" alt="Google">
-                    </div>
-                    <div class="company-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='50%25' y='50%25' fill='%2360a5fa' font-size='24' font-weight='bold' text-anchor='middle' dominant-baseline='middle'%3EMicrosoft%3C/text%3E%3C/svg%3E" alt="Microsoft">
-                    </div>
-                </div>
-            </div>
+      <a href="courses2.html?program=mern" class="course-card" data-color="#c14e2a">
+        <div class="course-card__top">
+          <span class="course-card__num">02</span>
+          <span class="course-card__level">Flagship</span>
         </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-badge">FAQs</div>
-                <h2 class="section-title-large">
-                    Frequently Asked <span class="gradient-text">Questions</span>
-                </h2>
-                <p class="section-subtitle">Find answers to common questions about our programs</p>
-            </div>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What are the prerequisites for enrolling in a course?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No prior technical knowledge is required for our beginner-friendly courses. All you need is a passion to learn and a computer with internet access. We start from the basics and gradually build up to advanced concepts.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How long does it take to complete a course?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Most of our comprehensive courses run for 6 months with flexible schedules. You can choose between weekday or weekend batches based on your availability. We also offer accelerated 3-month intensive programs for dedicated learners.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What kind of placement assistance do you provide?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We offer comprehensive placement assistance including resume building, mock interviews, soft skills training, and direct interviews with our 150+ hiring partners. Our placement team works with you until you secure your desired role, with lifetime assistance.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Can I try a course before enrolling?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Absolutely! We offer a 7-day free trial for all our courses. You'll get full access to the first module, live sessions with instructors, and our learning platform to experience our teaching methodology firsthand.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What is your refund policy?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We offer a 30-day money-back guarantee. If you're not satisfied with the course within the first month, we'll provide a full refund, no questions asked. Your satisfaction is our priority.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Do you provide certificates upon completion?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, upon successful completion of the course and final project, you'll receive an industry-recognized certificate that you can add to your LinkedIn profile and resume. Our certificates are valued by top companies worldwide.</p>
-                    </div>
-                </div>
-            </div>
+        <h3>MERN Stack</h3>
+        <p>Build production-grade products end-to-end with MongoDB, Express, React, and Node.</p>
+        <ul class="course-card__tech">
+          <li>React</li><li>Node</li><li>Express</li><li>MongoDB</li><li>TypeScript</li>
+        </ul>
+        <div class="course-card__kpis">
+          <div><span class="k">Duration</span><span class="v">5 Months</span></div>
+          <div><span class="k">Projects</span><span class="v">4 live</span></div>
+          <div><span class="k">Mode</span><span class="v">Hybrid</span></div>
         </div>
-    </section>
-
-    <!-- Blog/Resources Section -->
-    <section id="blog" class="blog-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-badge">Learning Resources</div>
-                <h2 class="section-title-large">
-                    Latest <span class="gradient-text">Insights & Articles</span>
-                </h2>
-                <p class="section-subtitle">Stay updated with the latest trends in tech education</p>
-            </div>
-
-            <div class="blog-grid">
-                <!-- Blog Post 1 -->
-                <article class="blog-card animate-on-scroll">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=500&fit=crop" alt="Learning strategies">
-                        <div class="blog-category">Education</div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> Jan 5, 2024</span>
-                            <span><i class="far fa-clock"></i> 5 min read</span>
-                        </div>
-                        <h3 class="blog-title">10 Effective Learning Strategies for Tech Students</h3>
-                        <p class="blog-excerpt">Discover proven techniques to accelerate your learning journey and retain information better...</p>
-                        <a href="#" class="blog-link">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 2 -->
-                <article class="blog-card animate-on-scroll">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop" alt="Career guidance">
-                        <div class="blog-category">Career</div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> Jan 3, 2024</span>
-                            <span><i class="far fa-clock"></i> 7 min read</span>
-                        </div>
-                        <h3 class="blog-title">How to Ace Your First Technical Interview</h3>
-                        <p class="blog-excerpt">Expert tips and strategies to help you prepare for and succeed in technical interviews...</p>
-                        <a href="#" class="blog-link">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 3 -->
-                <article class="blog-card animate-on-scroll">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=500&fit=crop" alt="Technology trends">
-                        <div class="blog-category">Technology</div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> Dec 28, 2023</span>
-                            <span><i class="far fa-clock"></i> 6 min read</span>
-                        </div>
-                        <h3 class="blog-title">Top Tech Trends to Watch in 2024</h3>
-                        <p class="blog-excerpt">Stay ahead of the curve with insights into the technologies that will shape the future...</p>
-                        <a href="#" class="blog-link">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-            </div>
+        <div class="course-card__foot">
+          <span>View program</span>
+          <span class="arrow">&#8599;</span>
         </div>
-    </section>
+      </a>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-content animate-on-scroll">
-                <div class="newsletter-text">
-                    <h3 class="newsletter-title">Stay Updated with Tech Trends</h3>
-                    <p class="newsletter-subtitle">Join 10,000+ subscribers receiving weekly insights, tips, and exclusive offers</p>
-                </div>
-                <form class="newsletter-form" id="newsletter-form">
-                    <div class="form-group">
-                        <input type="email" class="newsletter-input" placeholder="Enter your email" required>
-                        <button type="submit" class="newsletter-btn">
-                            <span>Subscribe</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                    <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
-                </form>
-            </div>
+      <a href="courses2.html?program=python" class="course-card" data-color="#a16207">
+        <div class="course-card__top">
+          <span class="course-card__num">03</span>
+          <span class="course-card__level">Intermediate</span>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
-        <div class="section-bg-gradient"></div>
-        <div class="container">
-            <div class="cta-content animate-on-scroll">
-                <h2 class="cta-title">
-                    Ready to <span class="gradient-text-rainbow">Transform</span> Your Life?
-                </h2>
-                <p class="cta-subtitle">
-                    Join thousands of successful graduates who started just like you. Your dream tech career is just one decision away.
-                </p>
-                <div class="cta-buttons">
-                    <button class="btn btn-primary btn-glow btn-large">
-                        <span>Book Free Counseling</span>
-                        <i class="fas fa-calendar-check"></i>
-                    </button>
-                    <a href="courses.html" class="btn btn-outline btn-large">
-                        <span>Download Brochure</span>
-                        <i class="fas fa-download"></i>
-                    </a>
-                </div>
-                <div class="cta-features">
-                    <div class="cta-feature">
-                        <div class="cta-feature-icon">💬</div>
-                        <h4 class="cta-feature-title">Free Consultation</h4>
-                        <p class="cta-feature-desc">Speak with our career advisors</p>
-                    </div>
-                    <div class="cta-feature">
-                        <div class="cta-feature-icon">📚</div>
-                        <h4 class="cta-feature-title">Free Resources</h4>
-                        <p class="cta-feature-desc">Access learning materials</p>
-                    </div>
-                    <div class="cta-feature">
-                        <div class="cta-feature-icon">🎁</div>
-                        <h4 class="cta-feature-title">Special Offer</h4>
-                        <p class="cta-feature-desc">Limited time scholarships</p>
-                    </div>
-                </div>
-            </div>
+        <h3>Python Full Stack</h3>
+        <p>Django, FastAPI, PostgreSQL, modern deployment, and the engineering culture to ship safely.</p>
+        <ul class="course-card__tech">
+          <li>Python</li><li>Django</li><li>FastAPI</li><li>Postgres</li><li>AWS</li>
+        </ul>
+        <div class="course-card__kpis">
+          <div><span class="k">Duration</span><span class="v">6 Months</span></div>
+          <div><span class="k">Projects</span><span class="v">5 live</span></div>
+          <div><span class="k">Mode</span><span class="v">Hybrid</span></div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <!-- Company Info -->
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <svg viewBox="0 0 100 100" class="logo-svg">
-                            <defs>
-                                <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-                                    <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" 
-                                     fill="none" 
-                                     stroke="url(#footerLogoGradient)" 
-                                     stroke-width="3"/>
-                            <circle cx="50" cy="50" r="8" fill="url(#footerLogoGradient)"/>
-                        </svg>
-                        <div class="logo-text">
-                            <div class="logo-name">DNDC</div>
-                            <div class="logo-tagline">DATA & DEVELOPMENT CENTER</div>
-                        </div>
-                    </div>
-                    <p class="footer-desc">
-                        Empowering the next generation of tech professionals with world-class education and industry-relevant skills.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/data-and-development-center-a203723b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.instagram.com/dndc_official?igsh=MWpxbnhvOGFsNmttcA==" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#courses">Our Courses</a></li>
-                        <li><a href="#testimonials">Success Stories</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Popular Courses -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Popular Courses</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">MERN Stack Development</a></li>
-                        <li><a href="#">Python Full Stack</a></li>
-                        <li><a href="#">Data Science & AI</a></li>
-                        <li><a href="#">Java Full Stack</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Get In Touch</h4>
-                    <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Mp Nagar Zone-1, Bhopal, Madhya Pradesh</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+917000073787</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>dndc.bpl@gmail.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Mon - Sat: 9:00 AM - 8:00 PM</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2026 Data & Development Center. All rights reserved.
-                </p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <span>•</span>
-                    <a href="#">Terms of Service</a>
-                    <span>•</span>
-                    <a href="#">Cookie Policy</a>
-                </div>
-            </div>
+        <div class="course-card__foot">
+          <span>View program</span>
+          <span class="arrow">&#8599;</span>
         </div>
-    </footer>
+      </a>
 
-    <!-- Chatbot Widget -->
-    <div class="chatbot-widget" id="chatbot-widget">
-        <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Open chat">
-            <i class="fas fa-comments"></i>
-            <span class="chatbot-badge">1</span>
+      <a href="courses2.html?program=ai" class="course-card" data-color="#b45309">
+        <div class="course-card__top">
+          <span class="course-card__num">04</span>
+          <span class="course-card__level">Advanced</span>
+        </div>
+        <h3>AI / ML</h3>
+        <p>Deep learning, NLP, LLM application engineering, and MLOps pipelines for production.</p>
+        <ul class="course-card__tech">
+          <li>PyTorch</li><li>HuggingFace</li><li>LangChain</li><li>MLflow</li><li>Docker</li>
+        </ul>
+        <div class="course-card__kpis">
+          <div><span class="k">Duration</span><span class="v">7 Months</span></div>
+          <div><span class="k">Projects</span><span class="v">6 live</span></div>
+          <div><span class="k">Mode</span><span class="v">Hybrid</span></div>
+        </div>
+        <div class="course-card__foot">
+          <span>View program</span>
+          <span class="arrow">&#8599;</span>
+        </div>
+      </a>
+
+      <a href="courses2.html?program=analytics" class="course-card" data-color="#92400e">
+        <div class="course-card__top">
+          <span class="course-card__num">05</span>
+          <span class="course-card__level">Beginner</span>
+        </div>
+        <h3>Data Analytics</h3>
+        <p>SQL, Power BI, Tableau, and the analytical storytelling that turns numbers into decisions.</p>
+        <ul class="course-card__tech">
+          <li>SQL</li><li>Excel</li><li>Power BI</li><li>Tableau</li><li>Python</li>
+        </ul>
+        <div class="course-card__kpis">
+          <div><span class="k">Duration</span><span class="v">4 Months</span></div>
+          <div><span class="k">Projects</span><span class="v">4 live</span></div>
+          <div><span class="k">Mode</span><span class="v">Hybrid</span></div>
+        </div>
+        <div class="course-card__foot">
+          <span>View program</span>
+          <span class="arrow">&#8599;</span>
+        </div>
+      </a>
+
+      <a href="courses2.html?program=datascience" class="course-card" data-color="#7c2d12">
+        <div class="course-card__top">
+          <span class="course-card__num">06</span>
+          <span class="course-card__level">Advanced</span>
+        </div>
+        <h3>Data Science</h3>
+        <p>Statistics, ML pipelines, deployment, and end-to-end real-world datasets you actually wrangle.</p>
+        <ul class="course-card__tech">
+          <li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>SQL</li><li>Spark</li>
+        </ul>
+        <div class="course-card__kpis">
+          <div><span class="k">Duration</span><span class="v">6 Months</span></div>
+          <div><span class="k">Projects</span><span class="v">5 live</span></div>
+          <div><span class="k">Mode</span><span class="v">Hybrid</span></div>
+        </div>
+        <div class="course-card__foot">
+          <span>View program</span>
+          <span class="arrow">&#8599;</span>
+        </div>
+      </a>
+
+      <a href="courses2.html?program=personality" class="course-card" data-color="#854d0e">
+        <div class="course-card__top">
+          <span class="course-card__num">07</span>
+          <span class="course-card__level">All levels</span>
+        </div>
+        <h3>Personality Development</h3>
+        <p>Communication, interviews, executive presence, and the soft skills that actually move careers.</p>
+        <ul class="course-card__tech">
+          <li>Communication</li><li>Presence</li><li>Interviews</li><li>Body language</li>
+        </ul>
+        <div class="course-card__kpis">
+          <div><span class="k">Duration</span><span class="v">3 Months</span></div>
+          <div><span class="k">Workshops</span><span class="v">12 live</span></div>
+          <div><span class="k">Mode</span><span class="v">Offline</span></div>
+        </div>
+        <div class="course-card__foot">
+          <span>View program</span>
+          <span class="arrow">&#8599;</span>
+        </div>
+      </a>
+
+      <a href="courses2.html?program=marketing" class="course-card" data-color="#9a3412">
+        <div class="course-card__top">
+          <span class="course-card__num">08</span>
+          <span class="course-card__level">Beginner</span>
+        </div>
+        <h3>Digital Marketing</h3>
+        <p>SEO, performance ads, brand, content, and the analytics layer that ties it all together.</p>
+        <ul class="course-card__tech">
+          <li>SEO</li><li>Google Ads</li><li>Meta Ads</li><li>Analytics</li><li>Content</li>
+        </ul>
+        <div class="course-card__kpis">
+          <div><span class="k">Duration</span><span class="v">4 Months</span></div>
+          <div><span class="k">Projects</span><span class="v">3 live</span></div>
+          <div><span class="k">Mode</span><span class="v">Hybrid</span></div>
+        </div>
+        <div class="course-card__foot">
+          <span>View program</span>
+          <span class="arrow">&#8599;</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- ABOUT DNDC                     -->
+  <!-- ============================== -->
+  <section class="about" id="about">
+    <div class="about__index">02 / About</div>
+
+    <div class="about__story" id="aboutStory">
+      <h2 class="about__head">
+        <span class="word">A</span>
+        <span class="word">creative</span>
+        <span class="word">technology</span>
+        <span class="word italic">institute</span>
+        <span class="word">for</span>
+        <span class="word">people</span>
+        <span class="word">who</span>
+        <span class="word">want</span>
+        <span class="word">to</span>
+        <span class="word italic">build,</span>
+        <span class="word">not</span>
+        <span class="word">just</span>
+        <span class="word italic">study.</span>
+      </h2>
+    </div>
+
+    <div class="about__counters">
+      <div class="counter">
+        <span class="counter__num" data-target="1400">0</span>
+        <span class="counter__lbl">Learners shaped</span>
+      </div>
+      <div class="counter">
+        <span class="counter__num" data-target="50">0</span>
+        <span class="counter__lbl">Hiring partners</span>
+      </div>
+      <div class="counter">
+        <span class="counter__num" data-target="10">0</span>
+        <span class="counter__lbl">Mentors on staff</span>
+      </div>
+      <div class="counter">
+        <span class="counter__num" data-target="100">0</span>
+        <span class="counter__lbl">Placement %</span>
+      </div>
+    </div>
+
+    <!-- Horizontal scroll panel -->
+    <div class="about__horizontal" id="aboutHorizontal">
+      <div class="about__horizontal-track" id="aboutTrack">
+        <div class="hpanel">
+          <img class="hpanel__img" src="assets/f1.jpeg" alt="DNDC mentors" loading="lazy" />
+          <span class="hpanel__num">01</span>
+          <h3>Built By Passion</h3>
+          <p>Three friends, one vision—to make quality technology education practical, affordable, and accessible for every student.</p>
+        </div>
+        <div class="hpanel">
+          <img class="hpanel__img" src="assets/g1.jpeg" alt="Students building projects at DNDC" loading="lazy" />
+          <span class="hpanel__num">02</span>
+          <h3>Together We Grow</h3>
+          <p>Every achievement becomes special when celebrated together. DNDC is more than a training center—it's a community of learners, mentors, and future professionals.</p>
+        </div>
+        <div class="hpanel">
+          <video class="hpanel__img" src="assets/seminarvid.mp4" muted autoplay loop alt="DNDC mentor at the center" loading="lazy" > </video>
+          <span class="hpanel__num">03</span>
+          <h3>Outcome-tracked</h3>
+          <p>Mock interviews, portfolio reviews, and placement pipelines.</p>
+        </div>
+        <div class="hpanel">
+          <img class="hpanel__img" src="assets/seminar.jpeg" alt="DNDC community celebration" loading="lazy" />
+          <span class="hpanel__num">04</span>
+          <h3>National Level Impact</h3>
+          <p>Representing DNDC as a National Judge at college competitions reflects our commitment to excellence and innovation in education.</p>
+        </div>
+
+        <div class="hpanel">
+          <img class="hpanel__img" src="assets/certificate.jpeg" alt="DNDC community celebration" loading="lazy" />
+          <span class="hpanel__num">05</span>
+          <h3>Proud Moment</h3>
+          <p>Receiving recognition from educational institutions motivates us to continue empowering students through practical learning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- WHY DNDC                       -->
+  <!-- ============================== -->
+  <section class="why" id="why">
+    <div class="section__head">
+      <div class="section__index">03 / Why DNDC</div>
+      <h2 class="section__title">
+        <span>The difference</span>
+        <span class="italic">is in the details.</span>
+      </h2>
+    </div>
+
+    <ul class="why__list">
+      <li class="why__item">
+        <span class="why__num">01</span>
+        <h3>Live Projects</h3>
+        <p>Real briefs from real teams — scoped to ship, not just demo.</p>
+        <span class="why__arrow">&#8599;</span>
+      </li>
+      <li class="why__item">
+        <span class="why__num">02</span>
+        <h3>Placement Support</h3>
+        <p>Curated referrals, resume reviews, and recruiter intros.</p>
+        <span class="why__arrow">&#8599;</span>
+      </li>
+      <li class="why__item">
+        <span class="why__num">03</span>
+        <h3>Internship Guidance</h3>
+        <p>Partner companies, hands-on cohorts, mentor matchmaking.</p>
+        <span class="why__arrow">&#8599;</span>
+      </li>
+      <li class="why__item">
+        <span class="why__num">04</span>
+        <h3>Certifications</h3>
+        <p>Industry-recognised credentials with verifiable projects.</p>
+        <span class="why__arrow">&#8599;</span>
+      </li>
+      <li class="why__item">
+        <span class="why__num">05</span>
+        <h3>Industry Mentorship</h3>
+        <p>One-on-one guidance from engineers at product companies.</p>
+        <span class="why__arrow">&#8599;</span>
+      </li>
+      <li class="why__item">
+        <span class="why__num">06</span>
+        <h3>Mock Interviews</h3>
+        <p>Realistic loops with feedback you can actually act on.</p>
+        <span class="why__arrow">&#8599;</span>
+      </li>
+    </ul>
+  </section>
+
+  
+
+  <!-- ============================== -->
+  <!-- TESTIMONIALS                   -->
+  <!-- ============================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="section__head">
+      <div class="section__index">04 / Stories</div>
+      <h2 class="section__title">
+        <span>From the</span>
+        <span class="italic">people</span>
+        <span>who lived it.</span>
+      </h2>
+    </div>
+
+    <div class="testimonials__rail" id="testimonialsRail">
+      <article class="t-card">
+        <p>"DNDC made me think like an engineer, not a student. The mentor reviews changed how I write code."</p>
+        <footer>
+          <img class="t-card__avatar" src="https://plus.unsplash.com/premium_photo-1682096111256-e020381ec730?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGluZGlhbiUyMGZhY2V8ZW58MHx8MHx8fDA%3D" alt="Ananya R." loading="lazy" />
+          <span class="t-card__person">
+            <span class="t-card__name">Ananya R.</span>
+            <span class="t-card__role">SDE, Razorpay</span>
+          </span>
+        </footer>
+      </article>
+      <article class="t-card">
+        <p>"The live project rounds were unreal. I joined as a beginner and left with a real portfolio."</p>
+        <footer>
+          <img class="t-card__avatar" src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwZmFjZXxlbnwwfHwwfHx8MA%3D%3D" alt="Karthik V." loading="lazy" />
+          <span class="t-card__person">
+            <span class="t-card__name">Karthik V.</span>
+            <span class="t-card__role">MERN Developer</span>
+          </span>
+        </footer>
+      </article>
+      <article class="t-card">
+        <p>"More than a course — it's a culture. The mock interviews carried me through three offers."</p>
+        <footer>
+          <img class="t-card__avatar" src="https://plus.unsplash.com/premium_photo-1723568666044-1b066e26b1fb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGluZGlhbiUyMGZhY2V8ZW58MHx8MHx8fDA%3D" alt="Sneha P." loading="lazy" />
+          <span class="t-card__person">
+            <span class="t-card__name">Sneha P.</span>
+            <span class="t-card__role">Data Analyst, Swiggy</span>
+          </span>
+        </footer>
+      </article>
+      <article class="t-card">
+        <p>"The way they teach AI/ML — projects first, theory in service of building — finally clicked for me."</p>
+        <footer>
+          <img class="t-card__avatar" src="https://images.unsplash.com/photo-1534339480783-6816b68be29c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwZmFjZXxlbnwwfHwwfHx8MA%3D%3D" alt="Rahul M." loading="lazy" />
+          <span class="t-card__person">
+            <span class="t-card__name">Rahul M.</span>
+            <span class="t-card__role">ML Engineer</span>
+          </span>
+        </footer>
+      </article>
+      <article class="t-card">
+        <p>"My communication and confidence improved as much as my code. That's rare in an institute."</p>
+        <footer>
+          <img class="t-card__avatar" src="https://plus.unsplash.com/premium_photo-1691030256264-59cdf9414ed1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5kaWFuJTIwZmFjZXxlbnwwfHwwfHx8MA%3D%3D" alt="Priya S." loading="lazy" />
+          <span class="t-card__person">
+            <span class="t-card__name">Priyesh S.</span>
+            <span class="t-card__role">Frontend Engineer</span>
+          </span>
+        </footer>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- PLACEMENTS                     -->
+  <!-- ============================== -->
+  <section class="placements" id="placements">
+    <div class="section__head">
+      <div class="section__index">05 / Placements</div>
+      <h2 class="section__title">
+        <span>Real students.</span>
+        <span class="italic">Real offers.</span>
+      </h2>
+      <p class="section__lede">
+        Our learners don't just finish a course — they get hired. Here are a
+        few of the offers our recent cohorts have celebrated.
+      </p>
+    </div>
+
+    <div class="placements__grid">
+      <figure class="placement-card">
+        <img src="assets/p1.jpeg" alt="Virendra Singh placed at LTIMindtree as Graduate Engineer Trainee" loading="lazy" />
+        <figcaption>
+          <span class="placement-card__name">Virendra Singh</span>
+          <span class="placement-card__role">Graduate Engineer Trainee · LTIMindtree</span>
+          <span class="placement-card__pkg">₹ 4.5 LPA</span>
+        </figcaption>
+      </figure>
+      <figure class="placement-card">
+        <img src="assets/p2.jpeg" alt="Priya Vishwakarma placed as Data Analyst at Brandsmashers Technology" loading="lazy" />
+        <figcaption>
+          <span class="placement-card__name">Priya Vishwakarma</span>
+          <span class="placement-card__role">Data Analyst · Brandsmashers Technology</span>
+        </figcaption>
+      </figure>
+      <figure class="placement-card">
+        <img src="assets/p3.jpeg" alt="Tarun Vishwakarma placed as Data Analyst at Brandsmashers Technology" loading="lazy" />
+        <figcaption>
+          <span class="placement-card__name">Tarun Vishwakarma</span>
+          <span class="placement-card__role">Data Analyst · Brandsmashers Technology</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- CTA STRIP                      -->
+  <!-- ============================== -->
+  <section class="cta-strip" id="contact">
+    <h2 class="cta-strip__title">
+      <span>Ready to</span>
+      <span class="italic">build something</span>
+      <span>that matters?</span>
+    </h2>
+    <a href="courses2.html" class="btn btn--solid btn--lg" data-magnetic>
+      <span>Book a Demo Class</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M2 8H14M14 8L8 2M14 8L8 14" stroke="currentColor" stroke-width="1.5" />
+      </svg>
+    </a>
+  </section>
+
+
+  <section class="location-strip">
+  <div class="location-strip__content">
+    <span class="location-strip__label">Visit Our Campus</span>
+
+    <h3>DNDC – Data & Development Center</h3>
+
+    <p>
+      MP Nagar Zone-1, Near Manohar Dairy,
+      Bhopal, Madhya Pradesh
+    </p>
+
+    <a
+      href="https://maps.app.goo.gl/1JnfPHZ6Xei5WsZC7"
+      target="_blank"
+      rel="noopener"
+      class="location-strip__link"
+    >
+      View on Google Maps ↗
+    </a>
+  </div>
+</section>
+
+  <!-- ============================== -->
+  <!-- FOOTER                         -->
+  <!-- ============================== -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/DNDC-Logo.jpeg" alt="DNDC — Data and Development Center" class="footer__logo" />
+      </div>
+
+      <nav class="footer__nav">
+        <div class="footer__col">
+          <h4>Programs</h4>
+          <a href="courses2.html" data-magnetic>Java Full Stack</a>
+          <a href="courses2.html" data-magnetic>MERN Stack</a>
+          <a href="courses2.html" data-magnetic>Python Full Stack</a>
+          <a href="courses2.html" data-magnetic>AI / ML</a>
+        </div>
+        <div class="footer__col">
+          <h4>Institute</h4>
+          <a href="#about" data-magnetic>About</a>
+          <a href="#why" data-magnetic>Why DNDC</a>
+          <a href="#testimonials" data-magnetic>Stories</a>
+          <a href="#contact" data-magnetic>Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:dndc.bpl@gmail.com" data-magnetic>dndc.bpl@gmail.com</a>
+          <a href="tel:+916261437008" data-magnetic>+91 6261437008</a>
+          <a href="https://www.instagram.com/dndc_official?igsh=dGxyamtudmx0N29t" data-magnetic>Instagram &#8599;</a>
+          <a href="https://www.linkedin.com/company/dndc-it-institute/" data-magnetic>LinkedIn &#8599;</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__big" id="footerBig">
+      <span class="footer__char">D</span>
+      <span class="footer__char">N</span>
+      <span class="footer__char">D</span>
+      <span class="footer__char">C</span>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; 2026 DNDC. All rights reserved.</span>
+      <span>Crafted with care.</span>
+    </div>
+  </footer>
+
+  <!-- ============================== -->
+  <!-- CHATBOT                        -->
+  <!-- ============================== -->
+  <div class="chatbot" id="chatbot">
+    <button class="chatbot__toggle" id="chatToggle" aria-label="Open chat">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    <div class="chatbot__panel" id="chatPanel">
+      <header class="chatbot__head">
+        <div class="chatbot__id">
+          <span class="chatbot__avatar">D</span>
+          <div>
+            <strong>DNDC Assistant</strong>
+            <span>Usually replies instantly</span>
+          </div>
+        </div>
+        <button class="chatbot__close" id="chatClose" aria-label="Close chat">&times;</button>
+      </header>
+      <div class="chatbot__body" id="chatBody">
+        <div class="msg msg--bot">
+          <p>Hi! I'm the DNDC assistant. Curious about courses, fees, or batches?</p>
+        </div>
+      </div>
+      <div class="chatbot__quick">
+        <button data-quick="Tell me about MERN">MERN</button>
+        <button data-quick="Fees & batches?">Fees & batches</button>
+        <button data-quick="Placement record?">Placements</button>
+      </div>
+      <form class="chatbot__form" id="chatForm">
+        <input type="text" id="chatInput" placeholder="Ask anything…" autocomplete="off" />
+        <button type="submit" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12L19 5L14 19L11 13L5 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+          </svg>
         </button>
-        <div class="chatbot-window" id="chatbot-window">
-            <div class="chatbot-header">
-                <div class="chatbot-header-info">
-                    <div class="chatbot-avatar">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div>
-                        <h4>DNDC Assistant</h4>
-                        <span class="chatbot-status">
-                            <span class="status-dot"></span>
-                            Online
-                        </span>
-                    </div>
-                </div>
-                <button class="chatbot-close" id="chatbot-close" aria-label="Close chat">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="chatbot-body" id="chatbot-body">
-                <div class="chatbot-message bot-message">
-                    <div class="message-avatar">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="message-content">
-                        <p>Hi! 👋 Welcome to DNDC. How can I help you today?</p>
-                    </div>
-                </div>
-                <div class="chatbot-quick-actions">
-                    <button class="quick-action-btn">Course Information</button>
-                    <button class="quick-action-btn">Pricing</button>
-                    <button class="quick-action-btn">Schedule Demo</button>
-                </div>
-            </div>
-            <div class="chatbot-footer">
-                <input type="text" class="chatbot-input" placeholder="Type your message..." id="chatbot-input">
-                <button class="chatbot-send" id="chatbot-send" aria-label="Send message">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
+      </form>
     </div>
+  </div>
 
-    <!-- Lead Form Modal -->
+     <!-- Lead Form Modal -->
 <div class="modal-overlay" id="lead-modal">
   <div class="modal">
     <button class="modal-close" id="lead-close">&times;</button>
@@ -1210,7 +853,7 @@ training institute in Mp nagar Zone-1 bhopal
       <!-- Honeypot (spam protection) -->
       <input type="text" name="company" style="display:none">
 
-      <button type="submit" class="btn btn-primary btn-glow">
+      <button type="submit" class="btn btn-primary btn-glow btn--solid">
         Book Free Counseling
       </button>
 
@@ -1221,62 +864,18 @@ training institute in Mp nagar Zone-1 bhopal
   </div>
 </div>
 
+  <!-- ============================== -->
+  <!-- SCRIPTS (CDN)                  -->
+  <!-- ============================== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
 
-<!-- AI Robot Assistant -->
-<div id="ai-robot-wrapper" class="ai-robot">
-    <div class="ai-speech">
-  Hi 👋 Need Career Help?
-</div>
-
-  <canvas id="ai-robot-canvas"></canvas>
-</div>
-
-<!-- AI Tools Bottom Panel -->
-<div id="ai-tools-panel" class="ai-tools-panel">
-  <div class="ai-panel-handle"></div>
-
-  <div class="ai-panel-header">
-    <h3>🤖 AI Career Assistant</h3>
-    <button id="ai-panel-close">✕</button>
-  </div>
-
-  <div class="ai-panel-body">
-    <button class="ai-tool-card">
-      <span class="icon">🧠</span>
-      <div>
-        <h4>Career Readiness Score</h4>
-        <p>Know how job-ready you are instantly</p>
-      </div>
-    </button>
-
-    <a href="./resume-analyzer.html" class="ai-tool-card">
-      <span class="icon">📄</span>
-      <div>
-        <h4>Resume Analyzer</h4>
-        <p>AI feedback to improve your resume</p>
-      </div>
-    </a>
-
-    <button class="ai-tool-card">
-      <span class="icon">🛣</span>
-      <div>
-        <h4>Learning Path Generator</h4>
-        <p>Personal roadmap based on goals</p>
-      </div>
-    </button>
-
-    <div class="ai-coming">
-      ➕ More AI tools coming soon
-    </div>
-  </div>
-</div>
-
-<!-- GLTF Loader -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
-    <!-- Toast Notification Container -->
-    <div class="toast-container" id="toast-container"></div>
-
-        <!-- JavaScript -->
-    <script src="js/main.js"></script>
+  <!-- App scripts -->
+  <script src="js/three-scene.js"></script>
+  <script src="js/main2.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
