@@ -19,17 +19,20 @@
     // ===========================================
     // Preloader
     // ===========================================
-    window.addEventListener('load', () => {
-        const preloader = document.getElementById('preloader');
-        
+   window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+
+    if (!preloader) return;
+
+    setTimeout(() => {
+        preloader.classList.add('hidden');
+
         setTimeout(() => {
-            preloader.classList.add('hidden');
-            
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        }, 2000);
-    });
+            preloader.style.display = 'none';
+        }, 500);
+
+    }, 2000);
+});
 
     // ===========================================
     // Three.js Globe Setup
@@ -677,32 +680,55 @@ Phone: ${phone}
     // Newsletter Form
     // ===========================================
     function setupNewsletterForm() {
-        document.getElementById("newsletter-form").addEventListener("submit", async e => {
-  e.preventDefault();
 
-  const email = e.target.querySelector("input").value;
+  const newsletterForm =
+    document.getElementById("newsletter-form");
 
-  try {
-    const res = await fetch("https://dndc.onrender.com/api/subscribe", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ email })
-});
+  if (!newsletterForm) return;
 
-if (!res.ok) {
-  throw new Error("Subscribe failed");
-}
+  newsletterForm.addEventListener("submit", async e => {
 
-showToast("📩 Check your email! Welcome to DNDC 🎉", "success");
+    e.preventDefault();
 
-    e.target.reset();
+    const email =
+      e.target.querySelector("input").value;
 
-  } catch {
-    showToast("❌ Subscription failed", "error");
-  }
-});
+    try {
+
+      const res = await fetch(
+        "https://dndc.onrender.com/api/subscribe",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email })
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error("Subscribe failed");
+      }
+
+      showToast(
+        "📩 Check your email! Welcome to DNDC 🎉",
+        "success"
+      );
+
+      e.target.reset();
+
+    } catch {
+
+      showToast(
+        "❌ Subscription failed",
+        "error"
+      );
 
     }
+
+  });
+
+}
 
     // ===========================================
     // Chatbot Widget
@@ -1176,10 +1202,14 @@ function openAIToolsPanel() {
  const panel = document.getElementById("ai-tools-panel");
   panel.classList.add("active");
 }
-document.getElementById("ai-panel-close")
-  .addEventListener("click", () => {
-    document.getElementById("ai-tools-panel").classList.remove("active");
-});
+const aiClose = document.getElementById("ai-panel-close");
+
+if (aiClose) {
+  aiClose.addEventListener("click", () => {
+    document.getElementById("ai-tools-panel")
+      ?.classList.remove("active");
+  });
+}
 
     // ===========================================
     // Initialize Everything
@@ -1213,7 +1243,7 @@ document.getElementById("ai-panel-close")
         setupNewsletterForm();
         setupAIRobot();
         setupChatbot();
-        setupDarkMode();
+        // setupDarkMode();
         setupSmoothScroll();
         createCourseParticles();
 
