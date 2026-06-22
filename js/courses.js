@@ -35,13 +35,78 @@
     const data = window.DNDC_COURSES;
     if (!data) return;
 
-    const params = new URLSearchParams(window.location.search);
-    const key = (params.get('program') || 'mern').toLowerCase();
+  let key = "mern";
+
+
+const path = window.location.pathname;
+
+if (
+  path.startsWith("/courses/") &&
+  path.split("/").pop() !== "courses"
+) {
+  key = path.split("/").pop().toLowerCase();
+  const slugMap = {
+  "mern": "mern",
+  "python": "python",
+  "java": "java",
+  "data-analytics": "analytics",
+  "data-science": "datascience",
+  "machine-learning": "ml",
+  "artificial-intelligence": "ai"
+};
+
+key = slugMap[key] || key;
+} else {
+  const params = new URLSearchParams(window.location.search);
+  key = (params.get("program") || "mern").toLowerCase();
+}
     const program = data[key] || data.mern;
     if (!program) return;
 
-    document.title = program.name + ' — DNDC';
+    document.title =
+`${program.name} Course in Bhopal | DNDC Training Institute`;
 
+const desc = document.querySelector(
+'meta[name="description"]'
+);
+
+if(desc){
+  desc.content =
+  `${program.name} training course in Bhopal at DNDC. Live projects, placement assistance, mentorship and industry-ready curriculum.`;
+}
+
+let canonical =
+document.querySelector('link[rel="canonical"]');
+
+const reverseSlugMap = {
+  analytics: "data-analytics",
+  datascience: "data-science",
+  ml: "machine-learning",
+  ai: "artificial-intelligence",
+  mern: "mern",
+  python: "python",
+  java: "java"
+};
+
+const seoSlug = reverseSlugMap[key] || key;
+
+if(canonical){
+   canonical.href =
+   `https://dndc.in/courses/${seoSlug}`;
+}
+document
+  .querySelector('meta[property="og:title"]')
+  ?.setAttribute(
+    "content",
+    `${program.name} Course in Bhopal | DNDC`
+  );
+
+document
+  .querySelector('meta[property="og:description"]')
+  ?.setAttribute(
+    "content",
+    `${program.name} training course with placement assistance at DNDC Bhopal`
+  );
     // Simple text bindings
     const durationRange = computeDurationRange(program.tiers);
     const values = Object.assign({}, program, { durationRange });
