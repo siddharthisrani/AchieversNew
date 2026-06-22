@@ -2,7 +2,7 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/courses/:program",
+      "source": "/program/:program",
       "destination": "/courses.html?program=:program"
     }
   ]
