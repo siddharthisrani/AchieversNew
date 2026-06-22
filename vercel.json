@@ -1,18 +1,18 @@
 {
   "cleanUrls": true,
 
-  "routes": [
+  "rewrites": [
     {
-      "src": "/courses/([^/]+)",
-      "dest": "/courses.html?program=$1"
+      "source": "/courses/:program",
+      "destination": "/courses.html?program=:program"
     },
     {
-      "src": "/courses",
-      "dest": "/explore-courses.html"
+      "source": "/courses",
+      "destination": "/courses.html"
     },
     {
-      "src": "/resume-analyzer",
-      "dest": "/resume-analyzer.html"
+      "source": "/resume-analyzer",
+      "destination": "/resume-analyzer.html"
     }
   ]
 }
