@@ -2,8 +2,8 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/program/:program",
-      "destination": "/courses.html?program=:program"
+      "source": "/program/(.*)",
+      "destination": "/courses.html?program=$1"
     }
   ]
 }
