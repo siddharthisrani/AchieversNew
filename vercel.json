@@ -3,6 +3,10 @@
     {
       "source": "/program/(.*)",
       "destination": "/courses.html?program=$1"
+    },
+    {
+      "source": "/resume-analyzer",
+      "destination": "/resume-analyzer.html"
     }
   ]
 }
