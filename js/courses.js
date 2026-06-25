@@ -40,24 +40,26 @@
 
 const path = window.location.pathname;
 
-if (
-  path.startsWith("/courses/") &&
-  path.split("/").pop() !== "courses"
-) {
-  key = path.split("/").pop().toLowerCase();
-  const slugMap = {
-  "mern": "mern",
-  "python": "python",
-  "java": "java",
-  "data-analytics": "analytics",
-  "data-science": "datascience",
-  "machine-learning": "ml",
-  "artificial-intelligence": "ai"
-};
+if (path.startsWith("/program/")) {
 
-key = slugMap[key] || key;
+  key = path.split("/").pop().toLowerCase();
+
+  const slugMap = {
+    "mern": "mern",
+    "python": "python",
+    "java": "java",
+    "data-analytics": "analytics",
+    "data-science": "datascience",
+    "machine-learning": "ml",
+    "artificial-intelligence": "ai"
+  };
+
+  key = slugMap[key] || key;
+
 } else {
+
   const params = new URLSearchParams(window.location.search);
+
   key = (params.get("program") || "mern").toLowerCase();
 }
     const program = data[key] || data.mern;
@@ -92,7 +94,7 @@ const seoSlug = reverseSlugMap[key] || key;
 
 if(canonical){
    canonical.href =
-   `https://dndc.in/courses/${seoSlug}`;
+   `https://dndc.in/program/${seoSlug}`;;
 }
 document
   .querySelector('meta[property="og:title"]')
