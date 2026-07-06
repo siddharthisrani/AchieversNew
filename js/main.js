@@ -182,11 +182,22 @@ document.getElementById("lead-form").addEventListener("submit", async (e) => {
 
     if (!res.ok) throw new Error();
 
-    showToast("🎉 Thanks! Our counselor will contact you shortly.", "success");
-    modal.classList.remove("active");
-    e.target.reset();
+   showToast(
+"🎉 Thanks! Our counselor will contact you shortly.",
+"success"
+);
 
-    const message = `
+// Never show popup again
+localStorage.setItem(
+"dndcLeadSubmitted",
+"true"
+);
+
+modal.classList.remove("active");
+
+e.target.reset();
+
+const message = `
 Hi DNDC 👋
 I want free counseling.
 
@@ -195,11 +206,19 @@ Email: ${email}
 Phone: ${phone}
 `;
 
-  const whatsappURL =
-    "https://wa.me/916261437008?text=" +
-    encodeURIComponent(message);
+const whatsappURL =
+"https://wa.me/916261437008?text=" +
+encodeURIComponent(message);
 
-  window.open(whatsappURL, "_blank");
+// Open after 1 second
+setTimeout(()=>{
+
+window.open(
+whatsappURL,
+"_blank"
+);
+
+},1000)
 
   } catch {
     showToast("❌ Something went wrong. Try again.", "error");
@@ -1260,14 +1279,74 @@ if (aiClose) {
 
           /* ================= Lead Modal Auto Open ================= */
 
+/* ================= Lead Modal Smart Auto Open ================= */
+
 const leadModal = document.getElementById("lead-modal");
 
-if (leadModal) {
-  setTimeout(() => {
+const POPUP_KEY = "dndcPopupLastShown";
+const SUBMIT_KEY = "dndcLeadSubmitted";
+
+function showLeadModal() {
+
+  // Don't show again if lead already submitted
+  if(localStorage.getItem(SUBMIT_KEY)) return;
+
+  const lastShown = localStorage.getItem(POPUP_KEY);
+
+  if(lastShown){
+
+    const hours =
+      (Date.now() - Number(lastShown)) /
+      (1000 * 60 * 60);
+
+    // Show again after 24 hours
+    if(hours < 24){
+      return;
+    }
+  }
+
+  if(leadModal){
+
     leadModal.classList.add("active");
-    console.log("🎯 Lead modal auto-opened on page load");
-  }, 3000);
+
+    localStorage.setItem(
+      POPUP_KEY,
+      Date.now()
+    );
+
+  }
+
 }
+
+let popupTriggered = false;
+
+function triggerPopup(){
+
+  if(popupTriggered) return;
+
+  popupTriggered = true;
+
+  showLeadModal();
+
+}
+
+// Show after 15 sec
+setTimeout(triggerPopup,15000);
+
+// OR after 50% scroll
+window.addEventListener("scroll",()=>{
+
+  const percent =
+  (window.scrollY + window.innerHeight) /
+  document.body.scrollHeight;
+
+  if(percent > 0.5){
+
+      triggerPopup();
+
+  }
+
+});
 
 
         console.log('✅ DNDC Website initialized successfully!');
