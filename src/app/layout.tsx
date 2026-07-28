@@ -6,6 +6,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { LeadPopupProvider } from "@/context/LeadPopupContext";
 import LeadPopup from "@/components/common/LeadPopup";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import {
   organizationSchema,
   localBusinessSchema,
@@ -163,5 +164,6 @@ export default function RootLayout({
     __html: JSON.stringify(localBusinessSchema),
   }}
 />
+<GoogleAnalytics gaId="G-HE7EMC2ENR" />
       </body>
     </html> );}
