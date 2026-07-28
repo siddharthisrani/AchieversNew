@@ -6,7 +6,7 @@ import { ArrowRight, ChevronRight, Sparkles } from "lucide-react";
 import { useLeadPopup } from "@/context/LeadPopupContext";
 import { notify } from "@/lib/toast";
 
-// Animation variants for the cinematic text reveall
+// Animation variants for the cinematic text revealll
 const containerVariants: Variants = {
   hidden: {
     opacity: 0,
