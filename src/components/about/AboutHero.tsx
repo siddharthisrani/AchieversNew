@@ -4,7 +4,6 @@ import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, ChevronRight, Sparkles } from "lucide-react";
 import { useLeadPopup } from "@/context/LeadPopupContext";
-import { notify } from "@/lib/toast";
 
 // Animation variants for the cinematic text revealll
 const containerVariants: Variants = {
@@ -51,12 +50,7 @@ export default function AboutHero() {
   ];
 
   const { openPopup } = useLeadPopup();
-     const handlePortalClick = () => {
-      notify.success(
-        "Student Portal is coming soon!"
-      );
-    };
-
+     
   return (
     <section className="relative min-h-[100dvh] w-full overflow-hidden bg-[#FDFBF7] selection:bg-orange-500 selection:text-white">
       
@@ -169,13 +163,12 @@ export default function AboutHero() {
             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
           </button>
 
-          <button
-          type="button"
-          onClick={handlePortalClick}
+          <Link
+  href="https://student.dndc.in"
             className="flex w-full items-center justify-center rounded-full border-2 !border-zinc-200/80 bg-white/60 px-8 py-4 text-sm font-bold !text-zinc-700 backdrop-blur-sm transition-all duration-300 hover:border-orange-200 hover:bg-orange-50 hover:!text-orange-600 sm:w-auto"
           >
             Student Portal
-          </button>
+          </Link>
         </motion.div>
       </div>
 

@@ -4,15 +4,10 @@ import Link from "next/link";
 import { ArrowUpRight, GraduationCap } from "lucide-react";
 import Magnetic from "@/components/animations/Magnetic";
 import { useLeadPopup } from "@/context/LeadPopupContext";
-import { notify } from "@/lib/toast";
 
 export default function HeroButtons() {
   const { openPopup } = useLeadPopup();
-   const handlePortalClick = () => {
-    notify.success(
-      "Student Portal is coming soon!"
-    );
-  };
+   
 
   return (
     <div className="mt-10 flex flex-wrap gap-4">
@@ -36,9 +31,8 @@ export default function HeroButtons() {
       {/* Secondary CTA */}
 
       <Magnetic>
-        <button
-          type="button"
-          onClick={handlePortalClick}
+        <Link
+  href="https://student.dndc.in"
           className="group flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-7 py-4 text-[15px] font-medium text-[#F1EAD8] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#E26743] hover:bg-[#E26743]/10 hover:text-[#E26743]"
         >
           <GraduationCap
@@ -52,7 +46,7 @@ export default function HeroButtons() {
             size={17}
             className="transition-transform duration-300 group-hover:rotate-45"
           />
-        </button>
+        </Link>
       </Magnetic>
     </div>
   );

@@ -100,7 +100,7 @@ export default function CourseFAQ({ course }: Props) {
               <button
               onClick={() =>
     window.open(
-      "https://wa.me/917879645092?text=Hi%20DNDC!%20I%20want%20to%20know%20more%20about%20this%20course.",
+      "https://wa.me/916261437008?text=Hi%20DNDC!%20I%20want%20to%20know%20more%20about%20this%20course.",
       "_blank"
     )
   }        className="mt-8 rounded-full bg-orange-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-orange-600 hover:shadow-[0_10px_30px_rgba(249,115,22,.35)]">

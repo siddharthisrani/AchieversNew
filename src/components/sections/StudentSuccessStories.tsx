@@ -8,7 +8,8 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import CountUp from "react-countup";
 import { useLeadPopup } from "@/context/LeadPopupContext";
-import { notify } from "@/lib/toast";
+import Link from "next/link";
+
 
 import {
   ArrowRight,
@@ -65,11 +66,7 @@ export default function SuccessGallery() {
   const timer = useRef<number | null>(null);
 
   const { openPopup } = useLeadPopup();
-     const handlePortalClick = () => {
-      notify.success(
-        "Student Portal is coming soon!"
-      );
-    };
+     
 
   /* ---------------- Slider ---------------- */
 
@@ -558,9 +555,8 @@ export default function SuccessGallery() {
                 </motion.div>
               </motion.button>
 
-               <button
-          type="button"
-          onClick={handlePortalClick}
+               <Link
+  href="https://student.dndc.in"
           className="group flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-10 py-5 text-[17px] font-medium text-[#F1EAD8] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#E26743] hover:bg-[#E26743]/10 hover:text-[#E26743]"
         >
           <GraduationCap
@@ -574,7 +570,7 @@ export default function SuccessGallery() {
             size={17}
             className="transition-transform duration-300 group-hover:rotate-45"
           />
-        </button>
+        </Link>
 
             </div>
 
